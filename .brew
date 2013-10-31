@@ -30,5 +30,17 @@ brew install git
 brew install rename
 brew install tree
 
+# Install gifify dependencies (see .functions)
+brew install ffmpeg
+brew tap phinze/homebrew-cask
+brew install brew-cask
+brew cask install x-quartz
+open /usr/local/Cellar/x-quartz/2.7.4/XQuartz.pkg
+# click through the stuff
+brew install gifsicle
+brew install imagemagick
+echo "If you're having weird problems with Convert/imagemagick, try:"
+echo "ln -s /usr/local/Cellar/libtool/2.4.2/lib/libltdl.7.dylib libltdl.7.dylib"
+
 # Remove outdated versions from the cellar
 brew cleanup

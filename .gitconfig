@@ -1,0 +1,14 @@
+[alias]
+	s = status --short --branch
+	ch = checkout
+	df = diff --color --color-words --abbrev
+    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
+
+[user]
+	name = Morten Noddeland
+	email = morten@noddeland.no
+[credential]
+	helper = osxkeychain
+[color]
+	ui = auto
+
