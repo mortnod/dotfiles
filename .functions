@@ -15,9 +15,9 @@ cdf() {  # short for cdfinder
 
 # lets toss an image onto my server and pbcopy that bitch.
 function scpp() {
-    scp "$1" aurgasm@aurgasm.us:~/paulirish.com/i;
-    echo "http://paulirish.com/i/$1" | pbcopy;
-    echo "Copied to clipboard: http://paulirish.com/i/$1"
+    scp "$1" mortnod@mortnod.webfactional.com:~/webapps/mvn_files/i;
+    echo "http://files.mvn.no/i/$1" | pbcopy;
+    echo "Copied to clipboard: http://files.mvn.no/i/$1"
 }
 
 # git log with per-commit cmd-clickable GitHub URLs (iTerm)
