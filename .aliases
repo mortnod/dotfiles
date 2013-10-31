@@ -34,6 +34,9 @@ alias la="ls -la ${colorflag}"
 # List only directories
 alias lsd='ls -l | grep "^d"'
 
+# Always use colors when using tree command
+alias tree='tree -C'
+
 # Go to git root folder
 alias gr='[ ! -z `git rev-parse --show-cdup` ] && cd `git rev-parse --show-cdup || pwd`'
 
