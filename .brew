@@ -1,0 +1,34 @@
+#!/bin/bash
+
+# Make sure we’re using the latest Homebrew
+brew update
+
+# Upgrade any already-installed formulae
+brew upgrade
+
+# Install GNU core utilities (those that come with OS X are outdated)
+brew install coreutils
+echo "Don’t forget to add $(brew --prefix coreutils)/libexec/gnubin to \$PATH."
+
+
+# Install GNU `find`, `locate`, `updatedb`, and `xargs` 
+# All the commands are g-prefixed
+brew install findutils
+
+# Install Bash 4
+brew install bash
+echo "INSTRUCTIONS TO FINISH INSTALLATION OF BASH"
+echo "1. sudo vim /etc/shells"
+echo "2. Add '/usr/local/bin/bash' to the end of the list"
+echo "3. chsh -s /usr/local/bin/bash YOUR_USER_NAME"
+echo "4. Restart terminal"
+echo "5. Run 'echo $BASH_VERSION' to check if the installation is correct"
+
+# Install everything else
+brew install ack
+brew install git
+brew install rename
+brew install tree
+
+# Remove outdated versions from the cellar
+brew cleanup
