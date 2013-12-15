@@ -1,0 +1,50 @@
+# Install native apps
+brew tap phinze/homebrew-cask
+brew install brew-cask
+
+function installcask() {
+	brew cask install "${@}" 2> /dev/null
+}
+
+installcask adobe-air
+installcask alfred
+installcask codekit
+installcask disk-inventory-x
+installcask dropbox
+installcask eclipse-ide
+installcask f-lux
+installcask firefox
+installcask flash
+installcask font-pt-mono
+installcask font-pt-sans
+installcask font-pt-serif
+installcask gitx-rowanj
+installcask google-drive
+installcask google-chrome
+installcask google-chrome-canary
+installcask google-hangouts
+installcask imagealpha
+installcask imageoptim
+installcask iterm2
+installcask java
+installcask kindle
+installcask lastpass-universal
+installcask opera
+installcask parallels-8
+installcask silverlight
+installcask simple-comic
+installcask skype
+installcask spotify
+installcask steam
+installcask sublime-text
+installcask teamviewer
+installcask the-unarchiver
+installcask thunderbird
+installcask totalfinder
+installcask transmission
+installcask unetbootin
+installcask vlc
+installcask wunderlist
+
+# Link Alfred to Cask so it can find the apps
+brew cask alfred link
