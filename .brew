@@ -6,13 +6,17 @@ brew update
 # Upgrade any already-installed formulae
 brew upgrade
 
+# Add extra taps (repositories)
+brew tap phinze/homebrew-cask
+
+# Install Cask
+brew install brew-cask
+
 # Install GNU core utilities (those that come with OS X are outdated)
 brew install coreutils
 echo "Don’t forget to add $(brew --prefix coreutils)/libexec/gnubin to \$PATH."
 
-
-# Install GNU `find`, `locate`, `updatedb`, and `xargs` 
-# All the commands are g-prefixed
+# Install a g-prefixed version of commands like `find`, `locate`, `updatedb`, and `xargs`
 brew install findutils
 
 # Install Bash 4
@@ -33,11 +37,9 @@ brew install z
 
 # Install gifify dependencies (see .functions)
 brew install ffmpeg
-brew tap phinze/homebrew-cask
-brew install brew-cask
-brew cask install x-quartz
-open /usr/local/Cellar/x-quartz/2.7.4/XQuartz.pkg
-# click through the stuff
+brew  cask install xquartz
+/usr/local/Cellar/x-quartz/2.7.4/XQuartz.pkg
+echo "Manually click through the XQuartz installer"
 brew install gifsicle
 brew install imagemagick
 echo "If you're having weird problems with Convert/imagemagick, try:"
