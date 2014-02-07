@@ -34,6 +34,7 @@ brew install git
 brew install rename
 brew install tree
 brew install z
+brew install node
 
 # Install gifify dependencies (see .functions)
 brew install ffmpeg
