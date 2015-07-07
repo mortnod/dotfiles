@@ -1,0 +1,42 @@
+{
+  "default_line_ending": "unix",
+  "file_exclude_patterns":
+  [
+    ".DS_Store",
+    "Desktop.ini",
+    "*.pyc",
+    "._*",
+    "Thumbs.db",
+    ".Spotlight-V100",
+    ".Trashes"
+  ],
+  "folder_exclude_patterns":
+  [
+    ".git",
+    "node_modules",
+    ".sass-cache",
+    "env",
+    "_site",
+    "_production"
+  ],
+  "font_size": 18.0,
+  "highlight_modified_tabs": true,
+  "hot_exit": false,
+  "ignored_packages":
+  [
+    "Vintage"
+  ],
+  "match_brackets": true,
+  "match_brackets_angle": true,
+  "rulers":
+  [
+    80
+  ],
+  "soda_classic_tabs": true,
+  "soda_folder_icons": true,
+  "tab_size": 2,
+  "theme": "Soda Dark.sublime-theme",
+  "translate_tabs_to_spaces": true,
+  "trim_trailing_white_space_on_save": true,
+  "word_wrap": true
+}
