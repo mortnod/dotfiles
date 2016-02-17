@@ -13,6 +13,20 @@ cdf() {  # short for cdfinder
   cd "`osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)'`"
 }
 
+# The opposite of cdf. Will open the the current Terminal path in the existing Finder window.
+cds() {
+    osascript -e 'on run pwd
+	set f to posix file pwd
+	tell app "Finder"
+	if number of Finder windows is 0 then
+	open f
+	else
+	set target of window 1 to f
+	end
+	end
+	end' "$PWD" > /dev/null
+}
+
 # lets toss an image onto my server and pbcopy that bitch.
 function scpp() {
     scp "$1" mortnod@mortnod.webfactional.com:~/webapps/mvn_files/i;

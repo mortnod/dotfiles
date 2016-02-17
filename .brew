@@ -31,6 +31,7 @@ echo "5. Run 'echo $BASH_VERSION' to check if the installation is correct"
 # Install everything else
 brew install ack
 brew install git
+brew install diff-so-fancy
 brew install rename
 brew install tree
 brew install z
