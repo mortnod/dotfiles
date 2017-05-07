@@ -18,6 +18,10 @@ print_in_yellow() {
     printf "\e[0;33m$1\e[0m"
 }
 
+print_in_gray() {
+    printf "\e[1;30m$1\e[0m"
+}
+
 print_heading() {
     print_in_purple "\n-------------------------------------------------"
     print_in_purple "\n$1"
@@ -48,4 +52,11 @@ ask_question() {
     else
         return 1
     fi
+}
+
+# As of now only supports blue text aligned with print_info
+print_list() {
+for line in "$@"; do
+    print_in_blue "      * $line\n"
+done
 }

@@ -125,7 +125,7 @@ install_macos() {
 	defaults write com.apple.screensaver askForPassword -int 1
 	defaults write com.apple.screensaver askForPasswordDelay -int 0
 
-	# Save screenshots to the desktop
+	# Save screenshots in a specified folder
 	defaults write com.apple.screencapture location -string "${HOME}/Pictures/Screenshots"
 
 	# Save screenshots in PNG format (other options: BMP, GIF, JPG, PDF, TIFF)
