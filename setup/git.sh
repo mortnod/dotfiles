@@ -1,0 +1,27 @@
+#!/bin/bash
+
+source 'settings.sh'
+source 'utils.sh'
+
+print_heading "Git"
+printf "To setup Git properly you'll need to specify your name and email\n\n"
+
+print_info "Found the following name and email in settings.sh:"
+print_in_blue "      * Name: $GIT_NAME\n"
+print_in_blue "      * Email: $GIT_EMAIL\n"
+
+if ask_question "Use the name and email mentioned above?"; then
+    git config --global user.name "$GIT_NAME"
+    git config --global user.email "$GIT_EMAIL"
+    print_success "Name and email set successfully"
+else
+    print_question "Enter your full name: "
+    read -r GIT_CUSTOM_NAME </dev/tty
+
+    print_question "Enter your email: "
+    read -r GIT_CUSTOM_EMAIL </dev/tty
+
+    git config --global user.name "$GIT_CUSTOM_NAME"
+    git config --global user.email "$GIT_CUSTOM_EMAIL"
+    print_success "Name and email set successfully"
+fi

@@ -60,3 +60,9 @@ for line in "$@"; do
     print_in_blue "      * $line\n"
 done
 }
+
+# Convert an absolute path to tilde path: /Users/mortnod/dev => ~/dev
+tildify() {
+    absolute_path=$1
+    echo ${absolute_path/$HOME/\~}
+}

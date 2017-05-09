@@ -1,0 +1,23 @@
+#!/bin/bash
+
+source 'settings.sh'
+source 'utils.sh'
+
+install_applications() {
+    print_info "Installing applications"
+    brew cask install "$@"
+    print_success "Applications successfully installed"
+}
+
+print_heading "Applications"
+printf "It is a real hassle having to reinstall all your applications (such as Chrome and Dropbox) after a system wipe. Let me do the job for you ;)\n\n"
+
+print_info "The following applications are ready to be installed (with brew cask):"
+print_list $BREW_CASKS
+printf "\n"
+
+if ask_question "Do you want to install the applications listed above?"; then
+    install_applications $BREW_CASKS
+else
+    print_error "That's fine. If you want to adjust which applications to install, just edit 'setup/settings.sh'"
+fi
