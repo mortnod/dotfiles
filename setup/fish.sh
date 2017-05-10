@@ -13,16 +13,10 @@ create_symlinks() {
     printf "\n"
 }
 
-set_fish_as_default_shell() {
-    print_info "Setting Fish as default shell"
-
+add_fish_as_allowed_shell() {
     # Add fish to /etc/shells (the list of allowed shells)
     # If "/usr/local/bin/fish" isn't already in "/etc/shells", add it to the list"
     grep -q -F '/usr/local/bin/fish' '/etc/shells' || echo '/usr/local/bin/fish' | sudo tee -a '/etc/shells'
-
-    # Set fish as default shell
-    chsh -s /usr/local/bin/fish
-    print_success "Fish successfully set as default shell\n"
 }
 
 install_fisherman() {
@@ -45,7 +39,17 @@ install_re_search() {
     chmod +x ~/.config/fisherman/re-search/re-search
     ln -s ~/.config/fisherman/re-search/re-search /usr/local/bin/re-search
 
-    print_success "Re-search successfully installed"
+    print_success "Re-search successfully installed\n"
+}
+
+set_fish_as_default_shell() {
+    if ask_question "Do you want to set Fish as your default shell?"; then
+        # Set fish as default shell
+        chsh -s /usr/local/bin/fish
+        print_success "Fish successfully set as default shell\n"
+    else
+        print_error "Alright. When the installer is finished, you can type 'fish' in the terminal to test it without setting it as your default"
+    fi
 }
 
 
@@ -53,7 +57,8 @@ print_heading "Fish"
 print_in_gray "Fins down the best shell in the tunaverse! (sorry)\n\n"
 
 create_symlinks
-set_fish_as_default_shell
+add_fish_as_allowed_shell
 install_fisherman
 install_fisherman_packages
 install_re_search
+set_fish_as_default_shell
