@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source 'utils.sh'
+source 'setup/utils.sh'
 
 # Ensure that script is run on macOS
 mac_or_die() {
@@ -48,7 +48,7 @@ macos_tweaks() {
     printf "However, there are a lot of them (about 100 tweaks) and not all of them might appeal to you. I recommend that you take a look at \"macos.sh\" to remove the tweaks you're not interested in before going further\n\n"
 
     if ask_question "Activate macOS tweaks?"; then
-        ./macos.sh
+        ./setup/macos.sh
         print_success "macOS successfully tweaked!"
     else
         print_error "Oh well. I'm sure the tweaks weren't that cool anyways..."
@@ -65,13 +65,13 @@ mac_or_die
 print_welcome_message
 ask_for_sudo
 
-./prerequisites.sh
-./fish.sh
-./bash.sh
-./git.sh
-./hyper.sh
-./node.sh
+./setup/prerequisites.sh
+./setup/fish.sh
+./setup/bash.sh
+./setup/git.sh
+./setup/hyper.sh
+./setup/node.sh
 macos_tweaks
-./applications.sh
+./setup/applications.sh
 
 print_goodbye

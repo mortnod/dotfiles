@@ -557,7 +557,7 @@ for app in "Activity Monitor" \
 	"Photos" \
 	"Safari" \
 	"SystemUIServer" \
-	"Terminal" \
+	# "Terminal" \
 	"Transmission" \
 	"iCal"; do
 	killall "${app}" &> /dev/null

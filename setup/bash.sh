@@ -1,9 +1,11 @@
 #!/bin/bash
 
-source 'utils.sh'
+# SCRIPT_DIR == Same folder as the script is placed in
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+source "${SCRIPT_DIR}/utils.sh"
 
 create_symlinks() {
-    ./symlink_dotfiles.sh "../dotfiles/bash/"
+    ${SCRIPT_DIR}/symlink_dotfiles.sh "../dotfiles/bash/"
 }
 
 print_heading "Bash"

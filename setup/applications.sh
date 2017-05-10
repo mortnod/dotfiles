@@ -1,7 +1,9 @@
 #!/bin/bash
 
-source 'settings.sh'
-source 'utils.sh'
+# SCRIPT_DIR == Same folder as the script is placed in
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+source "${SCRIPT_DIR}/../settings.sh"
+source "${SCRIPT_DIR}/utils.sh"
 
 install_applications() {
     print_info "Installing applications"

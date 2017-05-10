@@ -1,7 +1,9 @@
 #!/bin/bash
 
-source 'settings.sh'
-source 'utils.sh'
+# SCRIPT_DIR == Same folder as the script is placed in
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+source "${SCRIPT_DIR}/../settings.sh"
+source "${SCRIPT_DIR}/utils.sh"
 
 print_heading "Git"
 printf "To setup Git properly you'll need to specify your name and email\n\n"

@@ -1,13 +1,15 @@
 #!/bin/bash
 
-source 'settings.sh'
-source 'utils.sh'
+# SCRIPT_DIR == Same folder as the script is placed in
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+source "${SCRIPT_DIR}/../settings.sh"
+source "${SCRIPT_DIR}/utils.sh"
 
 create_symlinks() {
     print_info "Creating symlinks to the dotfiles"
-    ./symlink_dotfiles.sh "../dotfiles/fish/config/" ~/.config/fish/ false
-    ./symlink_dotfiles.sh "../dotfiles/fish/functions/" ~/.config/fish/functions/ false
-    ./symlink_dotfiles.sh "../dotfiles/universal/"
+    ${SCRIPT_DIR}/symlink_dotfiles.sh "../dotfiles/fish/config/" ~/.config/fish/ false
+    ${SCRIPT_DIR}/symlink_dotfiles.sh "../dotfiles/fish/functions/" ~/.config/fish/functions/ false
+    ${SCRIPT_DIR}/symlink_dotfiles.sh "../dotfiles/universal/"
     printf "\n"
 }
 

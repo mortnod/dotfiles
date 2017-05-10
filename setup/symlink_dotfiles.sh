@@ -1,6 +1,8 @@
 #!/bin/bash
 
-source 'utils.sh'
+# SCRIPT_DIR == Same folder as the script is placed in
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+source "${SCRIPT_DIR}/utils.sh"
 
 # Instead of actually copying the dotfiles in this repo to ~/, it simply symlinks them
 # $1: Relative path to the dotfiles you want to symlink
