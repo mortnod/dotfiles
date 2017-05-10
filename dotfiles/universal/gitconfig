@@ -4,11 +4,27 @@
 	cam = commit -am
 	s = status --short --branch
   ch = checkout
+
   lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
+	# Log, just more space efficient and with pretty colors
+
+	undo = reset --soft HEAD^
+	# If I’ve made a mistake in making a commit, this command sets things up the way they were before the commit.
+	# https://git-scm.com/docs/git-reset#git-reset-emgitresetemltmodegtltcommitgt
+
+	unstage = reset --
+	# git unstage example.txt => Remove that file from staging area
+
+	prune = fetch --prune
+	# When working on a project where others push branches to the main repository, I end up with lots of random local branches.
+	# Prune deletes any local branch which has been deleted from the remote.
+
+	stash-all = stash save --include-untracked
+	# Stash untracked files as well (files that's not been added with 'git add' yet)
 
 [core]
 	excludesfile = ~/.gitignore
-	attributesfile = ~/.gitattributes
+	# attributesfile = ~/.gitattributes
 
 [credential]
 	helper = osxkeychain
@@ -17,9 +33,15 @@
 [push]
 	default = current
 
-# Insanely beautiful diffs
-# Requires diff-so-fancy https://github.com/so-fancy/diff-so-fancy
+	followTags = true
+	# Instead of manually pushing new tags with --follow-tags,
+	# you always send your local tags up along with a git push.
+	# https://git-scm.com/docs/git-config#git-config-pushfollowTags
+
+
 [pager]
+	# Insanely beautiful diffs
+	# Requires diff-so-fancy https://github.com/so-fancy/diff-so-fancy
 	show = diff-so-fancy | less --tabs=1,5 -RFX
 	diff = diff-so-fancy | less --tabs=1,5 -RFX
 
