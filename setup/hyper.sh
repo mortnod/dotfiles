@@ -26,7 +26,7 @@ install_hyper_packages() {
 }
 
 print_heading "Hyper"
-printf "Hyper is a pretty slick terminal app. This setup will...\n"
+printf "Hyper is a pretty slick alternative to iTerm and Terminal. This setup will...\n"
 printf "  * Install Hyper\n"
 printf "  * Install HPM (Hyper Package Manager)\n"
 printf "  * Install a snazzy theme\n"
