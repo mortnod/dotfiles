@@ -1,0 +1,122 @@
+# -----------------------------------------------------------------------------
+# cd
+# -----------------------------------------------------------------------------
+alias ..="cd .."
+alias cd..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+alias ~="cd ~" # `cd` is probably faster to type though
+
+# cd into whatever is the forefront Finder window.
+cdf() {  # short for cdfinder
+  cd "`osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)'`"
+}
+
+# The opposite of cdf. Will open the the current Terminal path in the existing Finder window.
+cds() {
+  open .
+}
+
+# -----------------------------------------------------------------------------
+# ls
+# -----------------------------------------------------------------------------
+
+# If coreutils ls (gls) isn't available, alias gls → ls
+# This ensures that the following lines won't break
+hash gls >/dev/null 2>&1 || alias gls="ls"
+
+# Set correct colorflag, depending on whether gls is available or not
+if gls --color > /dev/null 2>&1; then colorflag="--color"; else colorflag="-G"; fi;
+
+alias ls='gls -AFh ${colorflag} --group-directories-first'
+#              ││└─ Human readable filesizes (when using -l)
+#              │└─ Put '/' after folders, '@' after symlinks, '*' after executables
+#              └─ Include hidden (but not . or ..)
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# Only directories
+alias lsd='ls -l | grep "^d"'
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# List all files, long format, colorized, permissions in octal
+function lsa(){
+	ls -l  "$@" | awk '
+    {
+      k=0;
+      for (i=0;i<=8;i++)
+        k+=((substr($1,i+2,1)~/[rwx]/) *2^(8-i));
+      if (k)
+        printf("%0o ",k);
+      printf(" %9s  %3s %2s %5s  %6s  %s %s %s\n", $3, $6, $7, $8, $5, $9,$10, $11);
+    }'
+}
+
+
+# -----------------------------------------------------------------------------
+# mkdir
+# -----------------------------------------------------------------------------
+# Create a new directory and enter it
+function md() {
+	mkdir -p "$@" && cd "$@"
+}
+
+
+# -----------------------------------------------------------------------------
+# `cat` with beautiful colors
+# -----------------------------------------------------------------------------
+# Requires sudo easy_install -U Pygments
+alias cat='pygmentize -O style=monokai -f console256 -g'
+alias c='cat'
+
+
+# -----------------------------------------------------------------------------
+# mv, rm, cp (make them verbose and safe)
+# -----------------------------------------------------------------------------
+alias mv='mv -v'
+alias rm='rm -i -v'
+alias cp='cp -v'
+
+
+# -----------------------------------------------------------------------------
+# git
+# -----------------------------------------------------------------------------
+
+# git root
+alias gr='[ ! -z `git rev-parse --show-cdup` ] && cd `git rev-parse --show-cdup || pwd`'
+alias git-root='gr'
+
+# -----------------------------------------------------------------------------
+# Show/hide files
+# -----------------------------------------------------------------------------
+
+# Hide/Show desktop icons
+alias hide-desktop-icons='defaults write com.apple.finder CreateDesktop -bool false && killall Finder'
+alias show-desktop-icons='defaults write com.apple.finder CreateDesktop -bool true && killall Finder'
+
+# Hide/Show hidden files in Finder
+alias hide-hidden-files='defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder'
+alias show-hidden-files='defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder'
+
+
+# -----------------------------------------------------------------------------
+# Other
+# -----------------------------------------------------------------------------
+
+alias dsstore-cleanup="find . -name '*.DS_Store' -type f -ls -delete"
+alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias hosts='sudo $EDITOR /etc/hosts'   # yes I occasionally 127.0.0.1 twitter.com ;)
+alias diskspace-report="df -P -kHl"
+alias fs="stat -f \"%z bytes\""
+alias file-size="fs"
+
+# Start an HTTP server from a directory, optionally specifying the port
+function server() {
+	local port="${1:-8000}"
+	open "http://localhost:${port}/"
+	# Set the default Content-Type to `text/plain` instead of `application/octet-stream`
+	# And serve everything as UTF-8 (although not technically correct, this doesn’t break anything for binary files)
+	python -c $'import SimpleHTTPServer;\nmap = SimpleHTTPServer.SimpleHTTPRequestHandler.extensions_map;\nmap[""] = "text/plain";\nfor key, value in map.items():\n\tmap[key] = value + ";charset=UTF-8";\nSimpleHTTPServer.test();' "$port"
+}

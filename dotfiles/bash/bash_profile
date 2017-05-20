@@ -1,0 +1,137 @@
+#!/bin/bash
+
+source_files() {
+    local file=''
+    local i=''
+
+    declare -r -a FILES_TO_SOURCE=(
+        'bash_aliases'  # Aliases and functions
+        'bash_prompt'   # Make the prompt look good
+        'bash.local'    # Local settings that should not be under version control
+    )
+
+    for i in ${!FILES_TO_SOURCE[*]}; do
+        file="$HOME/.${FILES_TO_SOURCE[$i]}"
+        [ -r "$file" ] && source "$file"
+    done
+}
+
+
+basics() {
+    # Prefer US English and use UTF-8 encoding
+    export LANG="en_US"
+    export LC_ALL="en_US.UTF-8"
+
+    # Make Python use UTF-8 encoding for output to stdin/stdout/stderr
+    export PYTHONIOENCODING="UTF-8"
+
+    # Make vim the default editor
+    export EDITOR="vim"
+
+    # Don't clear the screen after quitting a man page
+    export MANPAGER="less -X"
+
+    # Activate bash completion (installed using 'brew install bash_completion')
+    [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
+}
+
+
+colors() {
+    # highlighting inside manpages and elsewhere
+    # https://www.gnu.org/software/termutils/manual/termutils-2.0/html_chapter/tput_1.html
+    export LESS_TERMCAP_mb=$'\E[01;31m'       # begin blinking
+    export LESS_TERMCAP_md=$'\E[01;38;5;74m'  # begin bold
+    export LESS_TERMCAP_me=$'\E[0m'           # end mode
+    export LESS_TERMCAP_se=$'\E[0m'           # end standout-mode
+    export LESS_TERMCAP_so=$'\E[38;5;246m'    # begin standout-mode - info box
+    export LESS_TERMCAP_ue=$'\E[0m'           # end underline
+    export LESS_TERMCAP_us=$'\E[04;38;5;146m' # begin underline
+
+    # Always use color (even when piping to awk, grep, etc)
+    export CLICOLOR_FORCE=1
+
+    # LS_COLORS: So pretty! Different file types gets different colors
+    # github.com/trapd00r/LS_COLORS
+    command -v gdircolors >/dev/null 2>&1 || alias gdircolors="dircolors"
+    eval "$(gdircolors -b ~/.dircolors)"
+}
+
+
+autocompletion() {
+    # Adds autocompletion for coreutils, git, django, docker, npm and more
+    # What? https://debian-administration.org/article/316/An_introduction_to_bash_completion_part_1
+    # How? http://davidalger.com/development/bash-completion-on-os-x-with-brew/
+    if which brew > /dev/null && [ -f $(brew --prefix)/etc/bash_completion ]; then
+        . $(brew --prefix)/etc/bash_completion
+    fi
+
+    # Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
+    [ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2)" scp sftp ssh
+
+    # Do not attempt to search the PATH for possible completions when
+    # completion is attempted on an empty line
+    shopt -s no_empty_cmd_completion
+}
+
+
+folder_navigation() {
+    # Source 'z', a 'cd' replacement command (github.com/rupa/z)
+    . `brew --prefix`/etc/profile.d/z.sh
+
+    # Case-insensitive globbing (used in pathname expansion)
+    shopt -s nocaseglob
+
+    # Autocorrect typos in path names when using `cd`
+    shopt -s cdspell
+
+    # Automatically prepend `cd` to directory names
+    shopt -s autocd
+}
+
+
+history_tweaks() {
+    # timestamps for later analysis. www.debian-administration.org/users/rossen/weblog/1
+    export HISTTIMEFORMAT='%F %T '
+
+    # keep history up to date, across sessions, in realtime
+    #  http://unix.stackexchange.com/a/48113
+
+    # no duplicate entries
+    export HISTCONTROL=ignoredups:erasedups
+
+    # Increase the maximum number of commands recorded in the
+    # command history (default value is 500)
+    export HISTSIZE=100000
+
+    # Increase the maximum number of lines of history
+    # persisted in the Bash history file (default value is 500)
+    export HISTFILESIZE=$HISTSIZE
+
+    # Save and reload the history after each command finishes
+    export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+    # ^ the only downside with this is [up] on the readline will go over all history not just this bash session.
+
+    # Don't add certain commands to the history file
+    export HISTIGNORE="&:[bf]g:c:clear:history:exit:q:pwd:* --help"
+
+    # Append to the history file rather then overwriting it
+    which shopt > /dev/null && shopt -s histappend
+
+    # Save all lines of a multiple-line command in the same history entry
+    which shopt > /dev/null && shopt -s cmdhist
+}
+
+
+source_files
+basics
+colors
+autocompletion
+folder_navigation
+history_tweaks
+
+unset -f source_files
+unset -f basics
+unset -f colors
+unset -f autocompletion
+unset -f folder_navigation
+unset -f history_tweaks
