@@ -1,0 +1,83 @@
+" ----------------------------------------------
+" PLUGINS (install by running :PlugInstall)
+" ----------------------------------------------
+call plug#begin('~/.vim/plugged')
+
+Plug 'tpope/vim-sensible'                " Better vim defaults
+Plug 'ap/vim-css-color'                  " Add background colors to HEX and RGBA colors
+Plug 'itchyny/lightline.vim'             " Fancy powerline
+Plug 'airblade/vim-gitgutter'            " Mark lines as changed/added/removed
+Plug 'dhruvasagar/vim-table-mode'        " Prettier markdown tables
+" Plug 'Valloric/YouCompleteMe'          " Code-completion
+
+call plug#end()
+
+
+" ----------------------------------------------
+" STUFF ENABLED BY VIM-SENSIBLE
+" ----------------------------------------------
+"   syntax enable                        -  Color highlighting
+"   filetype plugin indent on            -  Filetype detection and correct indentation
+"   wildmenu                             -  Show autocomplete in vim command mode
+"   encoding=utf-8                       -  Encode as UTF-8
+"   autoread                             -  Autoread file changes (undoableby u)
+"   incsearch                            -  Start searching before pressing enter
+"   <C>-L keybinding                     -  For removing search highlight
+"   laststatus=2                         -  Show statusline at all times
+"   scrolloff=1                          -  Always show at least one line above/below the cursor
+"   load matchit.vim                     -  Jump between matching tags with %
+"   backspace=2                          -  Delete over newlines, etc.
+
+" ----------------------------------------------
+" THEME (reuse the colors from the snazzy theme)
+" ----------------------------------------------
+hi javaRepeat ctermfg = green
+hi javaType ctermfg = green
+hi javaStorageClass ctermfg=green cterm=bold
+hi javaDocTags ctermfg = green
+hi Conditional ctermfg = green
+hi LineNr ctermfg = darkGrey
+hi Comment ctermfg = grey
+hi Statement ctermfg = blue
+hi Function ctermfg = blue
+hi Identifier ctermfg = blue
+hi Exception ctermfg = green
+hi Special ctermfg = green
+hi String ctermfg = yellow
+hi MatchParen cterm=underline ctermfg=magenta
+hi Boolean ctermfg = red
+hi Constant ctermfg = magenta
+hi Number ctermfg = red
+
+" ----------------------------------------------
+" BASICS
+" ----------------------------------------------
+" One tab in a file is shown as 4 spaces
+set tabstop=4
+
+" One tab inserts 4 spaces
+set softtabstop=4
+
+" Tab is replaced by the spaces specified as above
+set expandtab
+
+" Show line numbers
+set number
+
+" Highlight matching paranthesis
+set showmatch
+
+" Highlight search matches
+set hlsearch
+
+" ----------------------------------------------
+" PLUGIN TWEAKS
+" ----------------------------------------------
+" PLUGIN: lightline
+set laststatus=2 " The plugin won't work correctly without this line
+
+" PLUGIN: vim-table-mode
+let g:table_mode_corner="|" "Use | instead of + for table corners. Makes the tables valid in markdown
+
+" PLUGIN: vim-gitgutter
+set updatetime=250 " Update vim every 250ms so that the git gutter is updated more often

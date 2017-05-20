@@ -68,6 +68,7 @@ ask_for_sudo
 ./setup/prerequisites.sh
 ./setup/fish.sh
 ./setup/bash.sh
+./setup/vim.sh
 ./setup/git.sh
 ./setup/hyper.sh
 ./setup/node.sh
