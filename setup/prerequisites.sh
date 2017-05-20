@@ -44,7 +44,15 @@ install_brew_packages() {
     print_success "Brew packages successfully installed\n"
 }
 
+install_python_packages() {
+    print_info "Installing python packages:"
+    print_list $@
+    pip install "$@"
+    print_success "Python packages successfully installed\n"
+}
+
 print_heading "Install prerequisites"
 install_xcode_select
 install_brew
 install_brew_packages $ESSENTIAL_BREW_PACKAGES
+install_python_packages $PIP_PACKAGES
