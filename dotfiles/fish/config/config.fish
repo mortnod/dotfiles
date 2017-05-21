@@ -5,6 +5,9 @@ source ~/.config/fish/aliases.fish
 # Requires: brew install coreutils
 set -gx PATH /usr/local/opt/coreutils/libexec/gnubin $PATH
 
+# Start virtualfish (to automatically activate python virtualenvs)
+eval (python -m virtualfish auto_activation)
+
 # Color highlighting inside manpages (and elsewhere)
 set -gx LESS_TERMCAP_mb \e'[01;31m'       # begin blinking
 set -gx LESS_TERMCAP_md \e'[01;38;5;74m'  # begin bold

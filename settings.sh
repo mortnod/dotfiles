@@ -32,4 +32,4 @@ FISHERMAN_PACKAGES="pure z jbonjean/re-search"
 BASH_BREW_PACKAGES="bash bash-completion z"
 
 # PYTHON
-PIP_PACKAGES="pygments virtualenv"
+PIP_PACKAGES="pygments virtualenv virtualfish"
