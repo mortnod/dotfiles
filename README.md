@@ -10,14 +10,17 @@
 # Better terminal colors
 ![Snazzy theme by Sindre Sorhus](https://github.com/sindresorhus/terminal-snazzy/raw/master/screenshot.png)
 
-**Hyper**
+
+### Hyper
 You don't have to do anything. Just run `install.sh` or `setup/hyper.sh`.
 
-**Terminal**
+
+### Terminal
 1. Open the file `other/snazzy.terminal`
 2. Open **Preferences** ➔ **Profiles**
 3. Select **Snazzy** and click **Default**
 
-**iTerm**
+
+### iTerm
 1. Open the file `other/snazzy.itermcolors`
 2. Select **Snazzy** from **Preferences** ➔ **Profiles** ➔ **Colors** ➔ **Load Presets**
