@@ -45,7 +45,9 @@ macos_tweaks() {
     printf "  * Use CTRL + scroll gesture to zoom (regardless of app your in)\n"
     printf "  * Disable the “Are you sure you want to open this application?” dialog\n\n"
 
-    printf "However, there are a lot of them (about 100 tweaks) and not all of them might appeal to you. I recommend that you take a look at \"macos.sh\" to remove the tweaks you're not interested in before going further\n\n"
+    printf "However, there are a lot of them (about 100 tweaks) and not all of them might appeal to you. I recommend that you take a look at "
+    print_in_blue "\"setup/macos.sh\" "
+    printf "to remove the tweaks you're not interested in before going further\n\n"
 
     if ask_question "Activate macOS tweaks?"; then
         ./setup/macos.sh

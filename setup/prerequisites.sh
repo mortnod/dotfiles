@@ -44,6 +44,17 @@ install_brew_packages() {
     print_success "Brew packages successfully installed\n"
 }
 
+install_optional_brew_packages() {
+    print_info "The following are a collection of OPTIONAL brew packages. They aren't really need for the setup to work, but you might still find them useful:"
+    print_list $@
+    printf "\n"
+
+    if ask_question "Do you want to install the (completely optional) brew packages mentioned above?"; then
+        brew install "$@"
+        print_success "Optional brew packages successfully installed\n"
+    fi
+}
+
 install_python_packages() {
     print_info "Installing python packages:"
     print_list $@
@@ -56,3 +67,4 @@ install_xcode_select
 install_brew
 install_brew_packages $ESSENTIAL_BREW_PACKAGES
 install_python_packages $PIP_PACKAGES
+install_optional_brew_packages $OPTIONAL_BREW_PACKAGES

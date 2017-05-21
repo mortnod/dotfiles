@@ -15,7 +15,7 @@ NPM_PACKAGES="n ncu yarn"
 HPM_PACKAGES="hyper-snazzy hyperlinks hyperterm-1password"
 
 # BREW (OPTIONAL)
-OPTIONAL_BREW_PACKAGES="pyenv python3 vim wget"
+OPTIONAL_BREW_PACKAGES="pyenv python3 wget"
 
 # --------------------------------------------------------------
 # DANGER ZONE! EDIT THE FOLLOWING SETTINGS WITH CARE
@@ -23,7 +23,7 @@ OPTIONAL_BREW_PACKAGES="pyenv python3 vim wget"
 # --------------------------------------------------------------
 
 # BREW (ESSENTIAL)
-ESSENTIAL_BREW_PACKAGES="coreutils diff-so-fancy fish node python"
+ESSENTIAL_BREW_PACKAGES="coreutils diff-so-fancy fish node python vim"
 
 # FISH (installed with fisherman)
 FISHERMAN_PACKAGES="pure z jbonjean/re-search"

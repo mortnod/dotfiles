@@ -1,6 +1,9 @@
 #!/bin/bash
 
-# Based on https://raw.githubusercontent.com/mathiasbynens/dotfiles/master/.macos
+###############################################################################
+# This is a subset of Mathias Bynens awesome collection of macos tweaks       #
+# https://raw.githubusercontent.com/mathiasbynens/dotfiles/master/.macos      #
+###############################################################################
 
 # Close any open System Preferences panes, to prevent them from overriding
 # settings we’re about to change
