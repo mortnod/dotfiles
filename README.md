@@ -1,7 +1,7 @@
 # Getting started
 1. `git clone https://github.com/mortenvn/dotfiles.git`
 2. Modify **settings.sh** to your needs
-  * Change git name, and remove packages/applications you don't need
+    * Change git name, and remove packages/applications you don't need
 3. Run the install script: `./install.sh`
 
 ![dotfiles-demo](https://cloud.githubusercontent.com/assets/3471625/26286320/9818992c-3e62-11e7-9f4f-00e5ebb3ba0e.gif)
