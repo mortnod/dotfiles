@@ -14,7 +14,7 @@ install_bash_packages() {
     print_info "Installing brew packages needed by bash:"
     print_list $@
     brew install "$@"
-    print_success "Brew packages successfully installed\n"
+    print_result $? "Install bash packages\n"
 }
 
 add_bash_as_allowed_shell() {
@@ -22,7 +22,7 @@ add_bash_as_allowed_shell() {
     # Add bash to /etc/shells (the list of allowed shells)
     # If "/usr/local/bin/fish" isn't already in "/etc/shells", add it to the list"
     grep -q -F '/usr/local/bin/bash' '/etc/shells' || echo '/usr/local/bin/bash' | sudo tee -a '/etc/shells'
-    print_success "Success!"
+    print_result $? "Add Bash 4 to allowed shells"
 }
 
 
@@ -31,6 +31,7 @@ printf "If you want, we can make Bash a bit better as well. Fish will still be t
 
 if ask_question "Add Bash support?"; then
     create_symlinks
+    printf "\n"
     install_bash_packages $BASH_BREW_PACKAGES
     add_bash_as_allowed_shell
 else

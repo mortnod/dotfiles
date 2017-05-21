@@ -8,11 +8,13 @@ source "${SCRIPT_DIR}/utils.sh"
 install_hyper() {
     print_info "Installing Hyper"
     brew cask install hyper
+    print_result $? "Install Hyper\n"
 }
 
 install_hpm() {
     print_info "Installing HPM (Hyper Package Manager)"
     npm install -g hpm-cli
+    print_result $? "Install HPM\n"
 }
 
 install_hyper_packages() {
@@ -23,6 +25,8 @@ install_hyper_packages() {
     done
 
     print_in_yellow "To activate 1Password support, go to 1Password → Preferences → Advanced and untick 'Verify browser code signature'\n"
+    print_result $? "Install HPM packages\n"
+
 }
 
 print_heading "Hyper"
@@ -36,7 +40,6 @@ if ask_question "Do you want to install Hyper?"; then
     install_hyper
     install_hpm
     install_hyper_packages
-    print_success "Hyper is ready to roll!"
 else
     print_error "Fine. It's your choice... ಠ_ಠ"
 fi

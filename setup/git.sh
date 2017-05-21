@@ -15,7 +15,6 @@ print_in_blue "      * Email: $GIT_EMAIL\n"
 if ask_question "Use the name and email mentioned above?"; then
     git config --global user.name "$GIT_NAME"
     git config --global user.email "$GIT_EMAIL"
-    print_success "Name and email set successfully"
 else
     print_question "Enter your full name: "
     read -r GIT_CUSTOM_NAME </dev/tty
@@ -25,5 +24,6 @@ else
 
     git config --global user.name "$GIT_CUSTOM_NAME"
     git config --global user.email "$GIT_CUSTOM_EMAIL"
-    print_success "Name and email set successfully"
 fi
+
+print_result $? "Set git name and email"

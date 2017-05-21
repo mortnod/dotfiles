@@ -41,7 +41,7 @@ symlink_dotfiles() {
         fi
 
         ln -s $file $absolute_symlink_path
-        print_success "$(tildify $absolute_symlink_path) → $(tildify $file)"
+        print_result $? "$(tildify $absolute_symlink_path) → $(tildify $file)"
 
     done
 }

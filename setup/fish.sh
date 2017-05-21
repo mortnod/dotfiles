@@ -22,14 +22,14 @@ add_fish_as_allowed_shell() {
 install_fisherman() {
     print_info "Installing fisherman (package manager)"
     curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs git.io/fisher
-    print_success "Fisherman successfully installed\n"
+    print_result $? "Install fisherman\n"
 }
 
 install_fisherman_packages() {
     print_info "Installing fisherman packages:"
     print_list $FISHERMAN_PACKAGES
     /usr/local/bin/fish -c "fisher install $FISHERMAN_PACKAGES"
-    print_success "Fisherman packages successfully installed\n"
+    print_result $? "Install fisherman packages\n"
 }
 
 install_re_search() {
@@ -39,14 +39,14 @@ install_re_search() {
     chmod +x ~/.config/fisherman/re-search/re-search
     ln -s ~/.config/fisherman/re-search/re-search /usr/local/bin/re-search
 
-    print_success "Re-search successfully installed\n"
+    print_result $? "Install re-search\n"
 }
 
 set_fish_as_default_shell() {
     if ask_question "Do you want to set Fish as your default shell?"; then
         # Set fish as default shell
         chsh -s /usr/local/bin/fish
-        print_success "Fish successfully set as default shell\n"
+        print_result $? "Set Fish as default shell\n"
     else
         print_error "Alright. When the installer is finished, you can type 'fish' in the terminal to test it without setting it as your default"
     fi

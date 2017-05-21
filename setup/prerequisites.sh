@@ -19,7 +19,7 @@ install_xcode_select() {
           tr -d '\n')
       softwareupdate -i "$PROD" --verbose;
 
-      print_success "Xcode Command Line Tools successfully installed\n";
+      print_result $? "Install Xcode Command Line Tools\n";
   fi
 }
 
@@ -31,7 +31,7 @@ install_brew() {
         brew doctor
         print_info "Setting up brew cask"
         brew tap caskroom/cask
-        print_success "Homebrew successfully installed\n"
+        print_result $? "Install Homebrew\n"
     else
         print_success "Oh! Homebrew was already installed!\n"
     fi
@@ -41,7 +41,7 @@ install_brew_packages() {
     print_info "Installing essential homebrew packages:"
     print_list $@
     brew install "$@"
-    print_success "Brew packages successfully installed\n"
+    print_result $? "Install brew packages\n"
 }
 
 install_optional_brew_packages() {
@@ -51,7 +51,7 @@ install_optional_brew_packages() {
 
     if ask_question "Do you want to install the (completely optional) brew packages mentioned above?"; then
         brew install "$@"
-        print_success "Optional brew packages successfully installed\n"
+        print_result $? "Install optional brew packages\n"
     fi
 }
 
@@ -59,7 +59,7 @@ install_python_packages() {
     print_info "Installing python packages:"
     print_list $@
     pip install "$@"
-    print_success "Python packages successfully installed\n"
+    print_result $? "Install python packages\n"
 }
 
 print_heading "Install prerequisites"

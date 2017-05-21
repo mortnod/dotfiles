@@ -44,6 +44,14 @@ print_error() {
     print_in_red "  [✖] $1 $2\n"
 }
 
+print_result() {
+    [ $1 -eq 0 ] \
+        && print_success "$2" \
+        || print_error "$2"
+
+    return $1
+}
+
 ask_question() {
     print_question "$1 [y/n] "
     read -r response </dev/tty

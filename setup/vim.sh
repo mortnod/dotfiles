@@ -8,7 +8,7 @@ install_vimplug() {
   print_info "Installing vim-plug (plugin manager)"
   curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  print_success "vim-plug successfully installed!\n"
+  print_result $? "Install vim-plug\n"
 }
 
 install_plugins() {
@@ -19,7 +19,7 @@ install_plugins() {
   sleep 2
 
   vim +PlugInstall +qall
-  print_success "Plugins successfully installed!"
+  print_result $? "Install plugins"
 }
 
 print_heading "Vim"

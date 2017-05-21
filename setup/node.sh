@@ -15,7 +15,7 @@ printf "\n" # An extra line break, purely for cosmetic reasons
 
 if ask_question "Do you want to install them?"; then
     npm install -g $NPM_PACKAGES
-    print_success "NPM packages successfully installed"
+    print_result $? "Install NPM packages"
 else
     print_error "Got it. No NPM packages for you."
 fi
