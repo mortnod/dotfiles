@@ -15,6 +15,9 @@ symlink_dotfiles() {
     # Where the symlinks should be placed. Default is ~/
     destination_path=${2:-~/}
 
+    # Create destination_path folders (if necessary)
+    mkdir -p $destination_path
+
     # Whether to hide the symlinks or not (default is hidden)
     # Example: true => ".hyper.js" false => "hyper.js"
     add_dot_in_front_of_filenames=${3:-true}
@@ -22,6 +25,8 @@ symlink_dotfiles() {
     # Where existing locations should be backed up
     backup_path=~/dotfiles_old
     mkdir -p $backup_path
+
+
 
     # move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks
     # print_info "Creating symlinks to the dotfiles"
