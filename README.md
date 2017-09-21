@@ -24,7 +24,7 @@ Lots of things! The following things will happen in cronological order:
   * Symlink [fish specific dotfiles](https://github.com/mortenvn/dotfiles/tree/master/dotfiles/fish)
   * Install [Fisherman](https://fisherman.github.io/) (fish package manager)
   * Install Fisherman packages (e.g. [pure theme](https://github.com/rafaelrinaldi/pure) and [z](https://github.com/rupa/z))
-  * **[?]** Set fish as default theme
+  * **[?]** Set fish as default shell
 * **[?] Bash**
   * Symlink [bash specific dotfiles](https://github.com/mortenvn/dotfiles/tree/master/dotfiles/bash)
   * Install bash specific brew dependencies
