@@ -9,7 +9,6 @@
 .LSOverride
 .Spotlight-V100
 .Trashes
-Icon
 
 
 # -----------------------------------------------------------------------------
@@ -59,3 +58,8 @@ tmtags
 # project files shouldn't be checked into the repository, as a significant
 # proportion of contributors will probably not be using SublimeText
 *.sublime-project
+
+# -----------------------------------------------------------------------------
+# Virtual Fish
+# -----------------------------------------------------------------------------
+.venv

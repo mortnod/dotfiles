@@ -9,13 +9,13 @@ GIT_EMAIL="morten@noddeland.no"
 BREW_CASKS="1password alfred arq atom balsamiq-mockups disk-inventory-x dropbox evernote flux gitx-rowanj google-chrome iconjar imageoptim iterm2 jetbrains-toolbox jitouch licecap omnifocus opera postman postbox skype slack spotify steam sublime-text superduper teamviewer the-unarchiver transmission vlc whatsapp"
 
 # NODE
-NPM_PACKAGES="n ncu yarn"
+NPM_PACKAGES="n ncu"
 
 # HYPER (installed with hpm)
 HPM_PACKAGES="hyper-snazzy hyperlinks hyperterm-1password"
 
 # BREW (OPTIONAL)
-OPTIONAL_BREW_PACKAGES="pyenv python3 wget"
+OPTIONAL_BREW_PACKAGES="python3 wget heroku/brew/heroku yarn"
 
 # --------------------------------------------------------------
 # DANGER ZONE! EDIT THE FOLLOWING SETTINGS WITH CARE
@@ -23,7 +23,7 @@ OPTIONAL_BREW_PACKAGES="pyenv python3 wget"
 # --------------------------------------------------------------
 
 # BREW (ESSENTIAL)
-ESSENTIAL_BREW_PACKAGES="coreutils diff-so-fancy fish node python vim"
+ESSENTIAL_BREW_PACKAGES="coreutils diff-so-fancy fish node python pyenv vim"
 
 # FISH (installed with fisherman)
 FISHERMAN_PACKAGES="rafaelrinaldi/pure z jbonjean/re-search"
