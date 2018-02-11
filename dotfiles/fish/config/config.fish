@@ -1,6 +1,11 @@
 # Activate the aliases
 source ~/.config/fish/aliases.fish
 
+# Source local settings (if the exist)
+if test -e ~/.config/fish/local.fish
+    source ~/.config/fish/local.fish
+end
+
 # Use a newer version of coreutils (includes cat, cp, chmod, ls, mv and so on)
 # Requires: brew install coreutils
 set -gx PATH /usr/local/opt/coreutils/libexec/gnubin $PATH
