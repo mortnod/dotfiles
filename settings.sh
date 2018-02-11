@@ -15,7 +15,7 @@ NPM_PACKAGES="n ncu"
 HPM_PACKAGES="hyper-snazzy hyperlinks hyperterm-1password"
 
 # BREW (OPTIONAL)
-OPTIONAL_BREW_PACKAGES="python3 wget heroku/brew/heroku yarn"
+OPTIONAL_BREW_PACKAGES="python3 wget gpg heroku/brew/heroku yarn"
 
 # --------------------------------------------------------------
 # DANGER ZONE! EDIT THE FOLLOWING SETTINGS WITH CARE
