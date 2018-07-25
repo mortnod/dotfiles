@@ -1,3 +1,7 @@
+[user]
+    name = Morten Noddeland
+    email = morten@noddeland.no
+
 [alias]
 	c = commit
 	cm = commit -m
@@ -68,6 +72,7 @@
 	added = green
 	changed = red
 	untracked = cyan
-[user]
-	name = Morten Noddeland
-	email = morten@noddeland.no
+
+# Rebase instead of merge on `git pull` https://mislav.net/2013/02/merge-vs-rebase/
+[pull]
+	rebase = true
