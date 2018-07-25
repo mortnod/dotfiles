@@ -9,7 +9,7 @@ GIT_EMAIL="morten@noddeland.no"
 BREW_CASKS="1password alfred arq atom balsamiq-mockups commandq discord dropbox electrum evernote firefox flux gitx-rowanj google-chrome grandperspective highsierramediakeyenabler iconjar imageoptim istat-menus iterm2 jaxx jetbrains-toolbox jitouch kap mailspring omnifocus opera postman pycharm signal skype sketch slack spotify steam sublime-text superduper teamviewer the-unarchiver transmission vanilla visual-studio-code vnc-viewer vlc whatsapp"
 
 # NODE
-NPM_PACKAGES="alfred-emoj n ncu"
+NPM_PACKAGES="n ncu"
 
 # HYPER (installed with hpm)
 HPM_PACKAGES="hyper-snazzy hyperlinks hyperterm-1password"
