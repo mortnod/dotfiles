@@ -1,6 +1,6 @@
 [user]
-    name = Morten Noddeland
-    email = morten@noddeland.no
+	name = Morten Noddeland
+	email = morten@noddeland.no
 
 [alias]
 	c = commit
