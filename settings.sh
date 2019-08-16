@@ -6,7 +6,7 @@ GIT_EMAIL="morten@noddeland.no"
 # The applications below are regular apps such as Chrome and Dropbox.
 # Please make sure that you remove all the programs you don't want to install on your computer
 # P.S. The installer script won't install the applications unless you tell it to. It's your call  :)
-BREW_CASKS="1password alfred arq atom balsamiq-mockups commandq discord dropbox electrum evernote firefox flux gitx-rowanj google-chrome grandperspective highsierramediakeyenabler iconjar imageoptim istat-menus iterm2 jaxx jetbrains-toolbox jitouch kap mailspring omnifocus opera postman pycharm signal skype sketch slack spotify steam sublime-text superduper teamviewer the-unarchiver transmission vanilla visual-studio-code vnc-viewer vlc whatsapp"
+BREW_CASKS="1password alfred arq atom balsamiq-mockups dropbox electrum evernote firefox flux franz google-chrome grandperspective haptic-touch-bar iconjar imageoptim istat-menus iterm2 ivpn jaxx-liberty jetbrains-toolbox jitouch kap mailspring notion omnifocus opera plex-media-player postman pycharm qlcolorcode qlimagesize qlmobi qlstephen quicklook-json rowanj-gitx sketch skype signal sip slack spotify steam sublime-text superduper teamviewer the-unarchiver transmission vanilla visual-studio-code vnc-viewer vlc zeplin"
 
 # NODE
 NPM_PACKAGES="n ncu"
@@ -15,7 +15,7 @@ NPM_PACKAGES="n ncu"
 HPM_PACKAGES="hyper-snazzy hyperlinks hyperterm-1password"
 
 # BREW (OPTIONAL)
-OPTIONAL_BREW_PACKAGES="ack jsonpp heroku/brew/heroku gpg tldr tree wget yarn"
+OPTIONAL_BREW_PACKAGES="ack bat jsonpp heroku/brew/heroku gpg tldr tree wget yarn"
 
 # --------------------------------------------------------------
 # DANGER ZONE! EDIT THE FOLLOWING SETTINGS WITH CARE
@@ -23,13 +23,13 @@ OPTIONAL_BREW_PACKAGES="ack jsonpp heroku/brew/heroku gpg tldr tree wget yarn"
 # --------------------------------------------------------------
 
 # BREW (ESSENTIAL)
-ESSENTIAL_BREW_PACKAGES="coreutils diff-so-fancy fish node python python@2 pyenv vim"
+ESSENTIAL_BREW_PACKAGES="coreutils diff-so-fancy fish highlight node python python@2 pyenv vim"
 
-# FISH (installed with fisherman)
-FISHERMAN_PACKAGES="rafaelrinaldi/pure z jbonjean/re-search"
+# FISH (installed with fisher)
+FISHER_PACKAGES="rafaelrinaldi/pure jethrokuan/z jbonjean/re-search"
 
 # BASH (installed with brew)
-BASH_BREW_PACKAGES="bash bash-completion z"
+BASH_BREW_PACKAGES="bash bash-completion"
 
 # PYTHON
 PIP_PACKAGES="pygments virtualenv virtualfish"
