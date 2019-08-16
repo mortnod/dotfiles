@@ -25,5 +25,35 @@ set -gx LESS_TERMCAP_us \e'[04;38;5;146m' # begin underline
 # Start pyenv: Used to easily switch between multiple versions of Python
 status --is-interactive; and source (pyenv init -|psub)
 
-set -gx  LC_ALL en_US.UTF-8
-set -gx  LANG en_US.UTF-8
+set -gx LC_ALL en_US.UTF-8
+set -gx LANG en_US.UTF-8
+
+# Fish syntax highlighting
+# https://fishshell.com/docs/current/index.html#variables-color
+
+set -gx fish_color_normal blue
+set -gx fish_color_command white --bold
+set -gx fish_color_quote yellow
+set -gx fish_color_redirection cyan
+set -gx fish_color_end magenta
+set -gx fish_color_error red
+set -gx fish_color_param blue
+set -gx fish_color_autosuggestion 828484
+set -gx fish_color_match green
+set -gx fish_color_operator magenta
+set -gx fish_color_escape magenta
+# set -gx fish_color_comment
+# set -gx fish_color_selection
+# set -gx fish_color_search_match
+# set -gx fish_color_cwd
+# set -gx fish_color_user
+# set -gx fish_color_host
+# set -gx fish_color_cancel
+# set -gx fish_pager_color_prefix
+# set -gx fish_pager_color_completion
+# set -gx fish_pager_color_description
+# set -gx fish_pager_color_progress
+# set -gx fish_pager_color_secondary
+
+# Pure prompt tweaks
+set -gx pure_color_prompt_on_success (set_color green)
