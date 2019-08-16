@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 ###############################################################################
 # This is a subset of Mathias Bynens awesome collection of macos tweaks       #
@@ -19,22 +19,18 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 # General UI/UX                                                               #
 ###############################################################################
 
-# Menu bar: hide the Time Machine, Volume, and User icons
-for domain in ~/Library/Preferences/ByHost/com.apple.systemuiserver.*; do
-	defaults write "${domain}" dontAutoLoad -array \
-		"/System/Library/CoreServices/Menu Extras/TimeMachine.menu" \
-		"/System/Library/CoreServices/Menu Extras/Volume.menu" \
-		"/System/Library/CoreServices/Menu Extras/User.menu"
-done
-defaults write com.apple.systemuiserver menuExtras -array \
-	"/System/Library/CoreServices/Menu Extras/Bluetooth.menu" \
-	"/System/Library/CoreServices/Menu Extras/AirPort.menu" \
-	"/System/Library/CoreServices/Menu Extras/Battery.menu" \
-	"/System/Library/CoreServices/Menu Extras/Clock.menu"
+# Set computer name (as done via System Preferences → Sharing)
+#sudo scutil --set ComputerName "0x6D746873"
+#sudo scutil --set HostName "0x6D746873"
+#sudo scutil --set LocalHostName "0x6D746873"
+#sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "0x6D746873"
+
+# Set standby delay to 24 hours (default is 1 hour)
+# sudo pmset -a standbydelay 86400
 
 # Always show scrollbars
-#defaults write NSGlobalDomain AppleShowScrollBars -string "Always"
 # Possible values: `WhenScrolling`, `Automatic` and `Always`
+# defaults write NSGlobalDomain AppleShowScrollBars -string "Always"
 
 # Increase window resize speed for Cocoa applications
 defaults write NSGlobalDomain NSWindowResizeTime -float 0.001
@@ -56,9 +52,15 @@ defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
 # Disable the “Are you sure you want to open this application?” dialog
 defaults write com.apple.LaunchServices LSQuarantine -bool false
 
+# Remove duplicates in the “Open With” menu (also see `lscleanup` alias)
+/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user
+
 # Display ASCII control characters using caret notation in standard text views
 # Try e.g. `cd /tmp; unidecode "\x{0000}" > cc.txt; open -e cc.txt`
 defaults write NSGlobalDomain NSTextShowsControlCharacters -bool true
+
+# Disable Resume system-wide
+# defaults write com.apple.systempreferences NSQuitAlwaysKeepsWindows -bool false
 
 # Disable automatic termination of inactive apps
 defaults write NSGlobalDomain NSDisableAutomaticTermination -bool true
@@ -77,17 +79,22 @@ sudo systemsetup -setrestartfreeze on
 defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
 
 # Disable smart dashes as they’re annoying when typing code
-# defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
+defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
 
 # Disable automatic capitalization as it’s annoying when typing code
-# defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool false
+defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool false
 
 # Disable automatic period substitution as it’s annoying when typing code
-# defaults write NSGlobalDomain NSAutomaticPeriodSubstitutionEnabled -bool false
+defaults write NSGlobalDomain NSAutomaticPeriodSubstitutionEnabled -bool false
 
 # Disable auto-correct
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 
+# Set a custom wallpaper image. `DefaultDesktop.jpg` is already a symlink, and
+# all wallpapers are in `/Library/Desktop Pictures/`. The default is `Wave.jpg`.
+#rm -rf ~/Library/Application Support/Dock/desktoppicture.db
+#sudo rm -rf /System/Library/CoreServices/DefaultDesktop.jpg
+#sudo ln -s /path/to/your/image /System/Library/CoreServices/DefaultDesktop.jpg
 
 ###############################################################################
 # Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
@@ -118,6 +125,18 @@ defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 defaults write NSGlobalDomain KeyRepeat -int 1
 defaults write NSGlobalDomain InitialKeyRepeat -int 35
 
+# Set language and text formats
+# Note: if you’re in the US, replace `EUR` with `USD`, `Centimeters` with
+# `Inches`, `en_GB` with `en_US`, and `true` with `false`.
+# defaults write NSGlobalDomain AppleLanguages -array "en-NO"
+# defaults write NSGlobalDomain AppleLocale -string "en_US@currency=EUR"
+# defaults write NSGlobalDomain AppleMeasurementUnits -string "Centimeters"
+# defaults write NSGlobalDomain AppleMetricUnits -bool true
+# Show language menu in the top right corner of the boot screen
+# sudo defaults write /Library/Preferences/com.apple.loginwindow showInputMenu -bool true
+# Set the timezone; see `sudo systemsetup -listtimezones` for other values
+# sudo systemsetup -settimezone "Europe/Brussels" > /dev/null
+
 ###############################################################################
 # Screen                                                                      #
 ###############################################################################
@@ -127,6 +146,7 @@ defaults write com.apple.screensaver askForPassword -int 1
 defaults write com.apple.screensaver askForPasswordDelay -int 0
 
 # Save screenshots in a specified folder
+mkdir -p "${HOME}/Pictures/Screenshots";
 defaults write com.apple.screencapture location -string "${HOME}/Pictures/Screenshots"
 
 # Save screenshots in PNG format (other options: BMP, GIF, JPG, PDF, TIFF)
@@ -188,7 +208,7 @@ defaults write NSGlobalDomain com.apple.springing.enabled -bool true
 # Remove the spring loading delay for directories
 #defaults write NSGlobalDomain com.apple.springing.delay -float 0
 
-# Avoid creating .DS_Store files on network volumes or USB volumes
+# Avoid creating .DS_Store files on network or USB volumes
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
 
@@ -269,6 +289,10 @@ defaults write com.apple.dock autohide -bool true
 
 # Make Dock icons of hidden applications translucent
 defaults write com.apple.dock showhidden -bool true
+
+	# Add iOS & Watch Simulator to Launchpad
+sudo ln -sf "/Applications/Xcode.app/Contents/Developer/Applications/Simulator.app" "/Applications/Simulator.app"
+sudo ln -sf "/Applications/Xcode.app/Contents/Developer/Applications/Simulator (Watch).app" "/Applications/Simulator (Watch).app"
 
 # Hot corners
 # Possible values:
@@ -351,7 +375,7 @@ defaults write com.apple.Safari AutoFillCreditCardData -bool false
 defaults write com.apple.Safari AutoFillMiscellaneousForms -bool false
 
 # Warn about fraudulent websites
-#defaults write com.apple.Safari WarnAboutFraudulentWebsites -bool true
+defaults write com.apple.Safari WarnAboutFraudulentWebsites -bool true
 
 # Disable plug-ins
 #defaults write com.apple.Safari WebKitPluginsEnabled -bool false
@@ -362,14 +386,14 @@ defaults write com.apple.Safari AutoFillMiscellaneousForms -bool false
 #defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2JavaEnabled -bool false
 
 # Block pop-up windows
-#defaults write com.apple.Safari WebKitJavaScriptCanOpenWindowsAutomatically -bool false
-#defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2JavaScriptCanOpenWindowsAutomatically -bool false
+defaults write com.apple.Safari WebKitJavaScriptCanOpenWindowsAutomatically -bool false
+defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2JavaScriptCanOpenWindowsAutomatically -bool false
 
 # Enable “Do Not Track”
 defaults write com.apple.Safari SendDoNotTrackHTTPHeader -bool true
 
 # Update extensions automatically
-#defaults write com.apple.Safari InstallExtensionUpdatesAutomatically -bool true
+defaults write com.apple.Safari InstallExtensionUpdatesAutomatically -bool true
 
 ###############################################################################
 # Mail                                                                        #
@@ -402,6 +426,9 @@ defaults write com.apple.terminal StringEncodings -array 4
 # Enable Secure Keyboard Entry in Terminal.app
 # See: https://security.stackexchange.com/a/47786/8918
 defaults write com.apple.terminal SecureKeyboardEntry -bool true
+
+# Disable the annoying line marks
+defaults write com.apple.Terminal ShowLineMarks -int 0
 
 # Install the Solarized Dark theme for iTerm
 #open "${HOME}/init/Solarized Dark.itermcolors"
@@ -461,13 +488,13 @@ defaults write com.apple.SoftwareUpdate AutomaticCheckEnabled -bool true
 defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
 
 # Download newly available updates in background
-#defaults write com.apple.SoftwareUpdate AutomaticDownload -int 1
+defaults write com.apple.SoftwareUpdate AutomaticDownload -int 1
 
 # Install System data files & security updates
 #defaults write com.apple.SoftwareUpdate CriticalUpdateInstall -int 1
 
 # Turn on app auto-update
-#defaults write com.apple.commerce AutoUpdate -bool true
+defaults write com.apple.commerce AutoUpdate -bool true
 
 # Allow the App Store to reboot machine on macOS updates
 #defaults write com.apple.commerce AutoUpdateRestartRequired -bool true
@@ -530,6 +557,9 @@ defaults write com.operasoftware.OperaDeveloper PMPrintingExpandedStateForPrint2
 defaults write org.m0k.transmission DownloadAsk -bool false
 defaults write org.m0k.transmission MagnetOpenAsk -bool false
 
+# Don’t prompt for confirmation before removing non-downloading active transfers
+defaults write org.m0k.transmission CheckRemoveDownloading -bool true
+
 # Trash original torrent files
 defaults write org.m0k.transmission DeleteOriginalTorrent -bool true
 
@@ -540,11 +570,12 @@ defaults write org.m0k.transmission WarningLegal -bool false
 
 # IP block list.
 # Source: https://giuliomac.wordpress.com/2014/02/19/best-blocklist-for-transmission/
+defaults write org.m0k.transmission BlocklistNew -bool true
 defaults write org.m0k.transmission BlocklistURL -string "http://john.bitsurge.net/public/biglist.p2p.gz"
 defaults write org.m0k.transmission BlocklistAutoUpdate -bool true
 
 # Randomize port on launch
-#defaults write org.m0k.transmission RandomPort -bool true
+defaults write org.m0k.transmission RandomPort -bool true
 
 ###############################################################################
 # Kill affected applications                                                  #
