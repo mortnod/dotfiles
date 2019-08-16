@@ -19,25 +19,25 @@ add_fish_as_allowed_shell() {
     grep -q -F '/usr/local/bin/fish' '/etc/shells' || echo '/usr/local/bin/fish' | sudo tee -a '/etc/shells'
 }
 
-install_fisherman() {
+install_fisher() {
     print_info "Installing fisherman (package manager)"
     curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs git.io/fisher
     print_result $? "Install fisherman\n"
 }
 
-install_fisherman_packages() {
+install_fisher_packages() {
     print_info "Installing fisherman packages:"
-    print_list $FISHERMAN_PACKAGES
-    /usr/local/bin/fish -c "fisher install $FISHERMAN_PACKAGES"
+    print_list $FISHER_PACKAGES
+    /usr/local/bin/fish -c "fisher add $FISHER_PACKAGES"
     print_result $? "Install fisherman packages\n"
 }
 
 install_re_search() {
     print_info "Installing re-search (backwards search using CTRL+R or arrow keys)"
 
-    make -C ~/.config/fisherman/re-search
-    chmod +x ~/.config/fisherman/re-search/re-search
-    ln -s ~/.config/fisherman/re-search/re-search /usr/local/bin/re-search
+    make -C ~/.config/fisher/github.com/jbonjean/re-search
+    chmod +x ~/.config/fisher/github.com/jbonjean/re-search/re-search
+    ln -s ~/.config/fisher/github.com/jbonjean/re-search/re-search /usr/local/bin/re-search
 
     print_result $? "Install re-search\n"
 }
@@ -58,7 +58,7 @@ print_in_gray "Fins down the best shell in the tunaverse! (sorry)\n\n"
 
 create_symlinks
 add_fish_as_allowed_shell
-install_fisherman
-install_fisherman_packages
+install_fisher
+install_fisher_packages
 install_re_search
 set_fish_as_default_shell
