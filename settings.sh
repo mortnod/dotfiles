@@ -6,7 +6,7 @@ GIT_EMAIL="morten@noddeland.no"
 # The applications below are regular apps such as Chrome and Dropbox.
 # Please make sure that you remove all the programs you don't want to install on your computer
 # P.S. The installer script won't install the applications unless you tell it to. It's your call  :)
-BREW_CASKS="1password adobe-creative-cloud arq atom balsamiq-mockups dropbox electrum evernote firefox flux franz google-chrome grandperspective haptic-touch-bar harvest iconjar imageoptim intel-power-gadget istat-menus iterm2 ivpn jaxx-liberty jetbrains-toolbox jitouch kap mailspring notion omnifocus opera parallels plex-media-player postman pycharm qlcolorcode qlimagesize qlmobi qlstephen quicklook-json rowanj-gitx sketch skype signal sip slack spotify steam sublime-text superduper teamviewer the-unarchiver transmission vanilla visual-studio-code vnc-viewer vlc webstorm zeplin"
+BREW_CASKS="1password adobe-creative-cloud arq balsamiq-mockups dropbox electrum evernote firefox flux franz google-chrome grandperspective haptic-touch-bar harvest iconjar imageoptim intel-power-gadget istat-menus iterm2 ivpn jaxx-liberty jetbrains-toolbox jitouch kap macmediakeyforwarder mailspring notion omnifocus opera parallels plex-media-player postman pycharm qlcolorcode qlimagesize qlmobi qlstephen quicklook-json rowanj-gitx sketch skype signal sip slack spotify steam sublime-text superduper teamviewer the-unarchiver transmission vanilla visual-studio-code vnc-viewer vlc webstorm zeplin"
 
 # NODE
 NPM_PACKAGES="n ncu"

@@ -1,0 +1,9 @@
+{
+  "core:focus-search": "mod+f",
+  "core:archive-item": "enter",
+  "core:delete-item": "backspace",
+  "multiselect-list:select-all": "mod+a",
+  "core:remove-from-view": "esc",
+  "core:mark-as-read": "m",
+  "core:mark-as-unread": "shift+m"
+}

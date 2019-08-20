@@ -10,6 +10,11 @@
   - [Simple Clock Screensaver](https://github.com/Wandmalfarbe/Simple-Clock-Screensaver/)
   - See [awesome-macos-screensavers](https://github.com/agarrharr/awesome-macos-screensavers) for more
 
+### Dock
+
+- Check _Automatically hide and show the Dock_
+- **(In the actual Dock)** Remove all applications. I prefer to only see open applications
+
 ### Mission Control
 
 - Check _Group windows by application_
@@ -251,7 +256,7 @@ The following are instructions to tweak the look of the menu bar items. The end 
 
 ### Profiles
 
-- **Colors:** Download the [Snazzy theme](snazzy.itermcolors), then click **Color Presets...** → **Import...** → `Snazzy.itermcolors`. After importing you actually have to select `Snazzy` from the list
+- **Colors:** Download the [Snazzy theme](iTerm/snazzy.itermcolors), then click **Color Presets...** → **Import...** → `Snazzy.itermcolors`. After importing you actually have to select `Snazzy` from the list
 - **Text:** Set _Font_ to `16pt Menlo`
 - **Terminal:** Check _Unlimited scrollback_
 - **Keys:** Click **Load Preset...** and select **Natural Text Editing**
@@ -261,7 +266,7 @@ The following are instructions to tweak the look of the menu bar items. The end 
 # <img src="https://user-images.githubusercontent.com/3471625/63225055-bffc8f80-c1cc-11e9-892c-0b9ef130797b.png" width="24">&nbsp; Terminal
 
 - Set Snazzy as theme
-  1. Download [Snazzy](snazzy.terminal) and open it
+  1. Download [Snazzy](Terminal/snazzy.terminal) and open it
   2. Open **Preferences** ➔ **Profiles**
   3. Select **Snazzy** and click **Default**
 
@@ -284,7 +289,7 @@ The following are instructions to tweak the look of the menu bar items. The end 
 
 ### Workflows
 
-- Download and install [restart-jitouch](restart-jitouch.alfredworkflow)
+- Download and install [restart-jitouch](Alfred/restart-jitouch.alfredworkflow)
 - Consider adding some of these workflows
   - [Github](https://github.com/gharlan/alfred-github-workflow)
   - [Can I Use](https://github.com/willfarrell/alfred-caniuse-workflow)
@@ -295,7 +300,7 @@ The following are instructions to tweak the look of the menu bar items. The end 
 
 ### Apperance
 
-- Use the custom theme [Bright](Bright.alfredappearance) by downloading and opening it
+- Use the custom theme [Bright](Alfred/Bright.alfredappearance) by downloading and opening it
 - Under **Options**, do the following
   - Check _Hide hat on Alfred window_
   - Check _Hide menu bar icon_
@@ -310,14 +315,24 @@ The following are instructions to tweak the look of the menu bar items. The end 
 
 # <img src="https://user-images.githubusercontent.com/3471625/63228118-4cb84500-c1ef-11e9-8118-b9421a558b8f.png" width="24">&nbsp; Mailspring
 
-- **TODO:** Fix keybindings
+### General
+
+- Uncheck _Launch on system start_
+- Uncheck _Show icon in menu bar_
+- Uncheck _Show Gmail-style important markers_
+- Check _Show unread counts for all folders / labels_
+- Check _Use 24-hour clock_
+
+### Shortcuts
+
+- Instead of overriding these manually, download [keymap.json](Mailspring/keymap.json) and put it at `~/Library/Application Support/Mailspring/keymap.json`
+
+# Signatures
+
+- Remove default signature, and add new ones if you'd like
 
 # Misc.
 
 ### Startup items
 
 After opening all installed applications at least once, go to **System Preference** → **User & Groups** → **Login Items**.
-
-### Fonts
-
-**TODO**
