@@ -48,10 +48,13 @@
 ### Keyboard
 
 - **Keyboard:** Get a physical escape key(!) by mapping it to Caps Lock. This is done by clicking **Modifier Keys...**
+- **Keyboard:** Set _Touch Bar shows_ to `Expanded Control Strip`
+- **Keyboard:** Click **Customise Touch Bar**. I prefer only leaving the most useful keys
+
+![customized touch bar](https://user-images.githubusercontent.com/3471625/63344749-76897d00-c351-11e9-9e03-940a8bf12b25.png)
+
 - **Shortcuts:** **Spotlight** → Check _Show spotlight search_ and set hotkey to `OPT` + `CMD` + `SPACE`
 - **Shortcuts:** **Spotlight** → Uncheck _Show finder search window_
-- **TODO:** Touch bar typing suggestions
-- **TODO:** Configure Touch Bar. Should always be media keys
 
 ### Trackpad
 
@@ -84,7 +87,6 @@
 - **Your user:** Change profile image
 - **Guest user:** Deactivate Guest User
 - **Login options:** Uncheck _Show fast user switching menu_
-- **TODO:** Find out what the _automatic login: On_ under _Login Options_ does
 
 ### Date & Time
 
@@ -166,11 +168,7 @@ All these tweaks are done in the **TotalFinder preferences** (`CMD + ,`)
 Almost all of my VS Code setup is stored in a [Gist](https://gist.github.com/mortnod/de96b779eaab3cf860d68c2470571074). To fetch this setup, do the following:
 
 1. Install the [Settings Sync](https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync) extension
-2. Press `SHIFT + CMD + P` and type `sync download`. A command called `Sync: Download Settings` should show up. Press `Enter`.
-
-### Other tweaks
-
-- **TODO:** Få CMD+fnut til å bytte mellom vinduer (kanskje en språkgreie?)
+2. Press `SHIFT + CMD + P` and type `sync download`. A command called `Sync: Download Settings` should show up. Press `Enter`
 
 # <img src="https://user-images.githubusercontent.com/3471625/63216058-bffa8200-c12f-11e9-956e-0b266e1e5566.png" width="24">&nbsp; jitouch
 
@@ -309,9 +307,7 @@ The following are instructions to tweak the look of the menu bar items. The end 
 
 - If there are any unwanted icons left in the menu bar, remove them
 - Organize the icons by holding `CMD` and dragging them around
-- Choose which icons should be hidden. The end result could look like this
-
-**TODO**
+- Choose which icons should be hidden (also achieved by dragging)
 
 # <img src="https://user-images.githubusercontent.com/3471625/63228118-4cb84500-c1ef-11e9-8118-b9421a558b8f.png" width="24">&nbsp; Mailspring
 
