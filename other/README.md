@@ -101,17 +101,18 @@
 While most applications are installed using `brew cask`, some must be installed manually.
 
 - [Alfred 3](https://www.alfredapp.com/help/v3/)
-- [TotalFinder](https://totalfinder.binaryage.com/)
+- PixelSnap (Check email for download link)
 - Apps only available on the app store
+  - [Contrast](https://usecontrast.com/)
   - [Gestimer](http://maddin.io/gestimer/)
   - [Colors for Hue](https://apps.apple.com/us/app/colors-for-hue/id581915465?mt=12)
   - [Handshaker](https://apps.apple.com/us/app/handshaker-manage-your-android-phones-at-ease/id1012930195)
+  - [Lightweight PDF](https://lightweightpdf.com/)
   - [ToothFairy](https://c-command.com/toothfairy/)
   - [inddPreview](https://apps.apple.com/us/app/inddpreview/id1153435308?mt=12)
   - [Magnet](https://magnet.crowdcafe.com/)
   - [GIF Brewery](https://gfycat.com/gifbrewery)
   - [Microsoft OneNote](https://apps.apple.com/us/app/microsoft-onenote/id410395246)
-  - [Wunderlist](https://www.wunderlist.com/)
   - [Icon Slate](https://www.kodlian.com/apps/icon-slate)
 
 # <img src="https://user-images.githubusercontent.com/3471625/63215398-182c8680-c126-11e9-8dbf-c27cc87c54d6.jpg" width="24">&nbsp; Finder
@@ -323,7 +324,7 @@ The following are instructions to tweak the look of the menu bar items. The end 
 
 - Instead of overriding these manually, download [keymap.json](Mailspring/keymap.json) and put it at `~/Library/Application Support/Mailspring/keymap.json`
 
-# Signatures
+### Signatures
 
 - Remove default signature, and add new ones if you'd like
 
