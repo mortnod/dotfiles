@@ -28,6 +28,7 @@
 
 [core]
 	excludesfile = ~/.gitignore
+	ignorecase = false
 	# attributesfile = ~/.gitattributes
 
 [credential]
@@ -76,3 +77,5 @@
 # Rebase instead of merge on `git pull` https://mislav.net/2013/02/merge-vs-rebase/
 [pull]
 	rebase = true
+[rebase]
+	autosquash = true
