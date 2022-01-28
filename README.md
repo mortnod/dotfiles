@@ -1,13 +1,12 @@
 # Getting started
-1. `git clone https://github.com/mortenvn/dotfiles.git`
+1. `git clone https://github.com/mortnod/dotfiles.git`
 2. Modify **settings.sh** to your needs
     * Change git name, and remove packages/applications you don't need
 3. Run the install script: `./install.sh`
 
 ![dotfiles-demo](https://cloud.githubusercontent.com/assets/3471625/26286320/9818992c-3e62-11e7-9f4f-00e5ebb3ba0e.gif)
 
-
-TODO: Nevn at det også er mulig å kjøre bare deler av installeringsskriptet. For eksempel ./hyper.sh. Dog kan det være lurt å sjekke at du har installert prerequisites allerede, ellers kan skriptet feile.
+Pst! You can also run only parts of the installation script, for example `setup/macos.sh`. Just make sure to run `setup/prerequisites.sh` first to ensure that the script doesn't fail. 
 
 
 # But... What does the install script DO?
