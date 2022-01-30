@@ -102,6 +102,7 @@ While most applications are installed using `brew cask`, some must be installed 
 
 - [Alfred 3](https://www.alfredapp.com/help/v3/)
 - PixelSnap (Check email for download link)
+- [Adobe Creative Cloud](https://creativecloud.adobe.com/en/apps/download/creative-cloud)
 - Apps only available on the app store
   - [Contrast](https://usecontrast.com/)
   - [Gestimer](http://maddin.io/gestimer/)
