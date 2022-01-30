@@ -7,7 +7,7 @@ source "${SCRIPT_DIR}/utils.sh"
 
 install_applications() {
     print_info "Installing applications"
-    brew cask install "$@"
+    brew install --cask "$@"
     print_result $? "Install applications"
 }
 

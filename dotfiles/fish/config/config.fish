@@ -6,9 +6,12 @@ if test -e ~/.config/fish/local.fish
     source ~/.config/fish/local.fish
 end
 
+# On ARM based macs, we need to provide path to brew binaries manually
+set -gx PATH /opt/homebrew/bin $PATH
+
 # Use a newer version of coreutils (includes cat, cp, chmod, ls, mv and so on)
 # Requires: brew install coreutils
-set -gx PATH /usr/local/opt/coreutils/libexec/gnubin $PATH
+set -gx PATH /opt/homebrew/opt/coreutils/libexec/gnubin $PATH
 
 
 

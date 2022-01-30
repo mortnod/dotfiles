@@ -18,11 +18,11 @@ install_bash_packages() {
 }
 
 add_bash_as_allowed_shell() {
-    print_info "Adding Bash 4 to list of allowed shells"
+    print_info "Adding Bash 5 to list of allowed shells"
     # Add bash to /etc/shells (the list of allowed shells)
-    # If "/usr/local/bin/fish" isn't already in "/etc/shells", add it to the list"
-    grep -q -F '/usr/local/bin/bash' '/etc/shells' || echo '/usr/local/bin/bash' | sudo tee -a '/etc/shells'
-    print_result $? "Add Bash 4 to allowed shells"
+    # If "opt/homebrew/bin/bash" isn't already in "/etc/shells", add it to the list"
+    grep -q -F $(brew --prefix)'/bin/bash' '/etc/shells' || echo $(brew --prefix)'/bin/bash' | sudo tee -a '/etc/shells'
+    print_result $? "Add Bash 5 to allowed shells"
 }
 
 

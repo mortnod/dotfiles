@@ -15,8 +15,8 @@ create_symlinks() {
 
 add_fish_as_allowed_shell() {
     # Add fish to /etc/shells (the list of allowed shells)
-    # If "/usr/local/bin/fish" isn't already in "/etc/shells", add it to the list"
-    grep -q -F '/usr/local/bin/fish' '/etc/shells' || echo '/usr/local/bin/fish' | sudo tee -a '/etc/shells'
+    # If "/opt/homebrew/bin/fish" isn't already in "/etc/shells", add it to the list"
+    grep -q -F $(brew --prefix)'/bin/fish' '/etc/shells' || echo $(brew --prefix)'/bin/fish' | sudo tee -a '/etc/shells'
 }
 
 install_fisher() {
@@ -28,16 +28,19 @@ install_fisher() {
 install_fisher_packages() {
     print_info "Installing fisherman packages:"
     print_list $FISHER_PACKAGES
-    /usr/local/bin/fish -c "fisher install $FISHER_PACKAGES"
+    /opt/homebrew/bin/fish -c "fisher install $FISHER_PACKAGES"
     print_result $? "Install fisherman packages\n"
 }
 
 install_re_search() {
     print_info "Installing re-search (backwards search using CTRL+R or arrow keys)"
 
-    make -C ~/.config/fisher/github.com/jbonjean/re-search
-    chmod +x ~/.config/fisher/github.com/jbonjean/re-search/re-search
-    ln -s ~/.config/fisher/github.com/jbonjean/re-search/re-search /usr/local/bin/re-search
+    curl https://codeload.github.com/jbonjean/re-search/tar.gz/HEAD | tar -xzC ~/.config/
+    mv re-search-HEAD re-search
+    make -C ~/.config/re-search
+    chmod +x ~/.config/re-search
+    chmod +x ~/.config/re-search/re-search
+    ln -s ~/.config/re-search $(brew --prefix)/bin/re-search
 
     print_result $? "Install re-search\n"
 }
@@ -45,7 +48,7 @@ install_re_search() {
 set_fish_as_default_shell() {
     if ask_question "Do you want to set Fish as your default shell?"; then
         # Set fish as default shell
-        chsh -s /usr/local/bin/fish
+        chsh -s $(brew --prefix)/bin/fish
         print_result $? "Set Fish as default shell\n"
     else
         print_error "Alright. When the installer is finished, you can type 'fish' in the terminal to test it without setting it as your default"
