@@ -60,6 +60,3 @@ set -gx pure_color_prompt_on_success (set_color green)
 # Start pyenv: Used to easily switch between multiple versions of Python
 status is-login; and pyenv init --path | source
 status is-interactive; and pyenv init - | source
-
-# Start virtualfish (to automatically activate python virtualenvs)
-eval (python -m virtualfish auto_activation)

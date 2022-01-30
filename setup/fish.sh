@@ -21,7 +21,7 @@ add_fish_as_allowed_shell() {
 
 install_fisher() {
     print_info "Installing fisherman (package manager)"
-    curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs git.io/fisher
+    curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
     print_result $? "Install fisherman\n"
 }
 
