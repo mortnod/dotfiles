@@ -23,7 +23,7 @@ OPTIONAL_BREW_PACKAGES="ack bat jsonpp heroku/brew/heroku gpg tldr tree wget yar
 # --------------------------------------------------------------
 
 # BREW (ESSENTIAL)
-ESSENTIAL_BREW_PACKAGES="coreutils diff-so-fancy fish highlight node python python@2 pyenv vim"
+ESSENTIAL_BREW_PACKAGES="coreutils diff-so-fancy fish highlight node pyenv vim openssl readline sqlite3 xz zlib"
 
 # FISH (installed with fisher)
 FISHER_PACKAGES="rafaelrinaldi/pure jethrokuan/z jbonjean/re-search"
