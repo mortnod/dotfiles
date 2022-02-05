@@ -10,10 +10,20 @@
   - [Simple Clock Screensaver](https://github.com/Wandmalfarbe/Simple-Clock-Screensaver/)
   - See [awesome-macos-screensavers](https://github.com/agarrharr/awesome-macos-screensavers) for more
 
-### Dock
+### Dock & Menu Bar
 
-- Check _Automatically hide and show the Dock_
-- **(In the actual Dock)** Remove all applications. I prefer to only see open applications
+- Dock & Menu Bar
+  - Check _Automatically hide and show the Dock_
+  - **(In the actual Dock)** Remove all applications. I prefer to only see open applications
+- Now Playing
+  - Uncheck "Show in menu bar"
+- Battery
+  - Uncheck "Show in menu bar"
+- Clock
+  - Uncheck "Show the day of the week
+  - Uncheck "Show date"
+- Spotlight
+  - Uncheck "Show in menu bar"
 
 ### Mission Control
 
@@ -33,36 +43,39 @@
 - **FileVault:** Turn it on
 - **Firewall:** Turn it on
 
+### Security & Privacy
+
+- Check "Automatically keep my Mac up to date"
+
 ### Displays
 
 - **Display:** Set desired screen resolution
 - **Night Shift:** Turn off Night Shift. I prefer letting [f.lux](https://justgetflux.com/) handle this instead
 - Uncheck _Show mirroring options in the menu bar when available_
 
-### Energy Saver
+### Battery
 
-- Uncheck _Show battery status in menu bar_. This will be replaced with a better battery indicator from [iStat Menus](https://bjango.com/mac/istatmenus/)
+- **Battery:** Uncheck _Show battery status in menu bar_. This will be replaced with a better battery indicator from [iStat Menus](https://bjango.com/mac/istatmenus/)
 - **Battery:** Turn off display after 5 minutes
 - **Power Adapter:** Turn off display after 15 minutes
 
 ### Keyboard
 
 - **Keyboard:** Get a physical escape key(!) by mapping it to Caps Lock. This is done by clicking **Modifier Keys...**
-- **Keyboard:** Set _Touch Bar shows_ to `Expanded Control Strip`
-- **Keyboard:** Click **Customise Touch Bar**. I prefer only leaving the most useful keys
-
-![customized touch bar](https://user-images.githubusercontent.com/3471625/63344749-76897d00-c351-11e9-9e03-940a8bf12b25.png)
 
 - **Shortcuts:** **Spotlight** → Check _Show spotlight search_ and set hotkey to `OPT` + `CMD` + `SPACE`
 - **Shortcuts:** **Spotlight** → Uncheck _Show finder search window_
+- **Shortcuts:** **Keyboard** → Set  _Move focus to next window_ to `⌘'`
 
 ### Trackpad
 
 - **Point & Click:** Check _Tap to click_
 - **Point & Click:** Uncheck _Look up & data detectors_
+- **Point & Click:** Uncheck _Force Click and haptic feedback_
 - **More gestures:** Check _App Exposé_
 - **More gestures:** Uncheck _Notification Center_
-- **More gestures:** Uncheck _Launchpad and Show Desktop_
+- **More gestures:** Uncheck _Launchpad_
+- **More gestures:** Uncheck _Show Desktop_
 
 ### Network
 
@@ -84,13 +97,11 @@
 
 ### Users & Groups
 
-- **Your user:** Change profile image
 - **Guest user:** Deactivate Guest User
 - **Login options:** Uncheck _Show fast user switching menu_
 
-### Date & Time
-
-- Uncheck _Show date and time in menu bar_. This will be replaced with a better date indicator from [iStat Menus](https://bjango.com/mac/istatmenus/)
+### User image
+- Change profile image by hovering over the image and clicking "edit"
 
 ### Accessibility
 
@@ -100,14 +111,14 @@
 
 While most applications are installed using `brew cask`, some must be installed manually.
 
+- [Adobe Creative Cloud](https://creativecloud.adobe.com/en/apps/download/creative-cloud)
 - [Alfred 3](https://www.alfredapp.com/help/v3/)
 - PixelSnap (Check email for download link)
-- [Adobe Creative Cloud](https://creativecloud.adobe.com/en/apps/download/creative-cloud)
+- TextSniper (Check email for download link)
 - Apps only available on the app store
   - [Contrast](https://usecontrast.com/)
   - [Gestimer](http://maddin.io/gestimer/)
   - [Colors for Hue](https://apps.apple.com/us/app/colors-for-hue/id581915465?mt=12)
-  - [Handshaker](https://apps.apple.com/us/app/handshaker-manage-your-android-phones-at-ease/id1012930195)
   - [Lightweight PDF](https://lightweightpdf.com/)
   - [ToothFairy](https://c-command.com/toothfairy/)
   - [inddPreview](https://apps.apple.com/us/app/inddpreview/id1153435308?mt=12)
@@ -131,7 +142,7 @@ While most applications are installed using `brew cask`, some must be installed 
 
 - While in the **Downloads** folder, click **View** → **Show View Options** and set the following:
 
-  - **Group by:** `Date added`
+  - **Group by:** `Date modified`
   - **Sort by:** `Name`
   - Feel free to this this for other folders like **Screenshots**
 
@@ -146,19 +157,6 @@ While most applications are installed using `brew cask`, some must be installed 
 
 <img width="128" src="https://user-images.githubusercontent.com/3471625/63217613-8171c100-c149-11e9-97a2-34df8c2d68a9.png">
 
-# <img src="https://user-images.githubusercontent.com/3471625/63215399-18c51d00-c126-11e9-8450-d445643901e0.png" width="24">&nbsp; TotalFinder
-
-⚠️ For TotalFinder to work, _System Integrity Protection_ must be deactivated. See instructions [here](https://totalfinder.binaryage.com/sip).
-
-All these tweaks are done in the **TotalFinder preferences** (`CMD + ,`)
-
-- **Dock:** Check _Keep original dock icon_
-- **Dock:** Check _Show progress bar in Dock_
-- **Menus:** Check _Hide icon in menu bar_
-- **File browser:** Check _Show system files_
-  - This adds a hotkey to easily show/hide hidden files 😍
-- **File browser:** Check _Automatically adjust widths in Column View_
-- **Tabs:** Check _Use narrow Tabs Bar_
 
 # <img src="https://user-images.githubusercontent.com/3471625/63215743-6728ea80-c12b-11e9-83e8-37d51c304833.png" width="24">&nbsp; f.lux
 
@@ -167,10 +165,7 @@ All these tweaks are done in the **TotalFinder preferences** (`CMD + ,`)
 
 # <img src="https://user-images.githubusercontent.com/3471625/63215821-617fd480-c12c-11e9-9dd3-33e13e387c19.png" width="24">&nbsp; VS Code
 
-Almost all of my VS Code setup is stored in a [Gist](https://gist.github.com/mortnod/de96b779eaab3cf860d68c2470571074). To fetch this setup, do the following:
-
-1. Install the [Settings Sync](https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync) extension
-2. Press `SHIFT + CMD + P` and type `sync download`. A command called `Sync: Download Settings` should show up. Press `Enter`
+- To fetch config and extensions, press `⌘ + SHIFT + P` and search for **Settings Sync**. By turning this on, all configurations and extensions will be fetched.
 
 # <img src="https://user-images.githubusercontent.com/3471625/63216058-bffa8200-c12f-11e9-956e-0b266e1e5566.png" width="24">&nbsp; jitouch
 
@@ -226,7 +221,7 @@ The following are instructions to tweak the look of the menu bar items. The end 
 
 ### Time
 
-- Set icon to <img src="https://user-images.githubusercontent.com/3471625/63217600-33f55400-c149-11e9-951a-082d4c20ee1d.png" height="16">
+- Set icon to <img src="https://user-images.githubusercontent.com/3471625/151724306-1240c2b8-998d-4dd8-a1a6-9bc7a851fd6a.png" height="16">
   - Add the calendar icon by clicking **Edit Menubar Clock**
 - Click **Edit dropdown** and uncheck _Cities_ and _Applications_
 - Check _Show week numbers in calendar_
@@ -236,6 +231,7 @@ The following are instructions to tweak the look of the menu bar items. The end 
 
 - **Apperance:** Set _status menu_ to `Single`
 - **Formats:** Remove unecessary formats
+- **Dock:** Uncheck "Show color dock"
 
 # <img src="https://user-images.githubusercontent.com/3471625/63224611-1666cf80-c1c7-11e9-87be-18d9c7329e93.png" width="24">&nbsp; Magnet
 
@@ -305,11 +301,80 @@ The following are instructions to tweak the look of the menu bar items. The end 
   - Check _Hide hat on Alfred window_
   - Check _Hide menu bar icon_
 
-# <img src="https://user-images.githubusercontent.com/3471625/63224584-96d90080-c1c6-11e9-926a-cf76ba4b60af.png" width="24">&nbsp; Vanilla
+# <img src="https://user-images.githubusercontent.com/3471625/151876806-43391930-7e0f-4eaf-b590-1e91e740674b.png" width="24">&nbsp; Tooth Fairy
 
-- If there are any unwanted icons left in the menu bar, remove them
-- Organize the icons by holding `CMD` and dragging them around
-- Choose which icons should be hidden (also achieved by dragging)
+- Check "Launch at login"
+- Check "Hide Dock icon"
+- Go to Advanced and check "Improve sound quiality by disabling audio input from device"
+- Add bluetooth headset, choose icon and check "Show battery status in menu bar"
+
+# <img src="https://user-images.githubusercontent.com/3471625/151878218-0d9013ac-e500-41d3-b0b4-c724b465f87f.png" width="24">&nbsp; 1Password
+
+- Go to Preferences
+  - **General:** Check "Show item count in sidebar"
+  - **Watchtower:** Check "Check for vulnerable passwords"
+
+# <img src="https://user-images.githubusercontent.com/3471625/151879293-2e944ed5-474d-4022-beb4-43fc9ae3abee.png" width="24">&nbsp; App Store
+
+- In Preferences, uncheck "In-App Ratings & Reviews"
+
+
+# <img src="https://user-images.githubusercontent.com/3471625/151879803-3e68aeaf-889b-4483-8793-00866495ad43.png" width="24">&nbsp; Bartender
+
+- **General:** Check "Launch Bartender at login
+- **General:** Uncheck "Clicking on the menu bar will show/hide menu bar items"
+- **General:** Uncheck "Moving the mouse into the menu bar will show hidden menu bar items
+- **General:** Uncheck "Show Hidden Item Divider"
+- **General:** Set menu bar spacing to "Small spacing"
+- **Menu Bar layout:** Arrange however you which. My preferences from right to left
+  - Always visible: Calendar, Battery, WiFi, Tooth Fairy, Arq, CPU usage, Network usage
+  - Expandable: Memory usage, Fans, Sip
+  - Always hidden: Flux, 1Password, Magnet
+
+# <img src="https://user-images.githubusercontent.com/3471625/152602131-ac0753a7-5cf2-4aaf-aca7-d1192451d83a.png" width="24">&nbsp; Franz
+
+- Log in to services (duh)
+- Open Settings
+  - **General:** Uncheck "Enable Franz Todos"
+  - **General:** Uncheck "Enable spell checking"
+  - **General:** Uncheck "Launch Franz on start"
+
+# <img src="https://user-images.githubusercontent.com/3471625/152602257-8d210e5a-fd3d-46d3-afbf-c23b15075fcb.png" width="24">&nbsp; Iconjar
+
+- **Library:** Make sure the library path is set to `~/Resources/Icons/<iconjarfile>`
+
+
+# <img src="https://user-images.githubusercontent.com/3471625/152604546-afc103df-45c8-4d3f-8909-4d9174b606dc.png" width="24">&nbsp; Font book
+
+- Transfer all "User" fonts. All the current fonts can be copied from `~/Library/Fonts/`. Either restore them from backup or transfer via AirDrop.
+
+# <img src="https://user-images.githubusercontent.com/3471625/152605212-072d5839-7e4e-4056-915c-0dbaf0cebe1a.png" width="24">&nbsp; IINA
+
+- In Finder, find media files such as mp4, mkv, etc, click `⌘ + i`. Under **Open With**, set to `IINA`
+
+# <img src="https://user-images.githubusercontent.com/3471625/152607668-a61b6095-9696-4b7f-98c0-b74db0fe129e.png" width="24">&nbsp; PixelSnap
+
+- **General:** Set global hotkey to `⌘ + SHIFT + 1`
+- **General:** Check "Enable Sketch support"
+- **General:** Check "Start at login"
+- **Screenshots:** Set location to ~/Pictures/Screenshots
+
+# <img src="https://user-images.githubusercontent.com/3471625/152658649-3bd75685-6846-4072-8c93-a01848a6f948.png" width="24">&nbsp; Firefox
+
+- Log in to sync settings
+- Hide most extensions by right clicking them and selecting **Pin to overflow menu**
+- Use the "Custom search" extension to add the following searches:
+  - **Urban Dictionary (u):** https://www.urbandictionary.com/define.php?term=%s
+  - **Wikipedia (w):** https://en.wikipedia.org/w/index.php?search=%s
+  - **Wikipedia (wn):** https://no.wikipedia.org/w/index.php?search=%s
+  - **Google Maps (m):** https://www.google.com/maps?q=%s
+  - **Google Translate (t):** https://translate.google.no/?sl=auto&text=%s
+  - **Can I Use (c):** https://caniuse.com/?search=%s
+  - **BundlePhobia (b):** https://bundlephobia.com/package/%s
+  - **YouTube (y):** https://www.youtube.com/results?search_query=%s
+- In `about:config`, set the following flags:
+  - **full-screen-api.macos-native-full-screen** → `true`. This enables seeing the MacOS menu bar when bringing the cursor to the top of the screen (useful to see the clock and similar without exiting full screen)
+  - **full-screen-api.warning.timeout** → `0`. This enables seeing the MacOS menu bar when bringing the cursor to the top of the screen (this removes the annoying "how to exit fullscreen message that stays way to long)
 
 # <img src="https://user-images.githubusercontent.com/3471625/63228118-4cb84500-c1ef-11e9-8118-b9421a558b8f.png" width="24">&nbsp; Mailspring
 
