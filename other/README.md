@@ -376,6 +376,11 @@ The following are instructions to tweak the look of the menu bar items. The end 
   - **full-screen-api.macos-native-full-screen** → `true`. This enables seeing the MacOS menu bar when bringing the cursor to the top of the screen (useful to see the clock and similar without exiting full screen)
   - **full-screen-api.warning.timeout** → `0`. This enables seeing the MacOS menu bar when bringing the cursor to the top of the screen (this removes the annoying "how to exit fullscreen message that stays way to long)
 
+# Better Touch Tool
+
+- Import keyboard shortcuts
+
+
 # <img src="https://user-images.githubusercontent.com/3471625/63228118-4cb84500-c1ef-11e9-8118-b9421a558b8f.png" width="24">&nbsp; Mailspring
 
 ### General

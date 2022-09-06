@@ -60,3 +60,15 @@ set -gx pure_color_prompt_on_success (set_color green)
 # Start pyenv: Used to easily switch between multiple versions of Python
 status is-login; and pyenv init --path | source
 status is-interactive; and pyenv init - | source
+
+# Go (for Konfidens)
+set -gx GOPATH "$HOME/go"
+set -gx PATH $GOPATH/bin $PATH
+
+# n without sudo
+set -gx N_PREFIX "$HOME/.n"
+set -gx PATH "$HOME/.n/bin" $PATH
+
+# Some aws fuckery
+set -gx AWS_VAULT_BACKEND keychain
+set -gx AWS_VAULT_KEYCHAIN_NAME aws-vault
