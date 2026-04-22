@@ -73,3 +73,6 @@ end
 function ki
     open "https://github.com/Konfidens/konfidens/issues/$argv[1]"
 end
+
+# Typing is boring :)
+alias p='pnpm'
