@@ -29,6 +29,10 @@
 [core]
 	excludesfile = ~/.gitignore
 	ignorecase = false
+
+	# Ignore changes to the executable bit of files in the working directory.
+	# I have no memory of why I added this -_-
+	fileMode = false
 	# attributesfile = ~/.gitattributes
 
 [credential]
