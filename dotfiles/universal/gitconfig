@@ -26,6 +26,15 @@
 	# Stash untracked files as well (files that's not been added with 'git add' yet)
 	stash-all = stash save --include-untracked
 
+	# git fixup <commithash> will commit changes as if it was part of the provided commit. Like amend, but for stuff further back in time
+	fixup = "!f() { TARGET=$(git rev-parse "$1"); git commit --fixup=$TARGET ${@:2} && EDITOR=true git rebase -i --gpg-sign=morten@noddeland.no --autostash --autosquash $TARGET^; }; f"
+
+	# Push local branch to remote AND link them together for easier pushing and pulling
+	ggpush='git push --set-upstream origin $(git symbolic-ref --short HEAD)'
+
+	# Delete all branches that has already been merged https://mathspp.com/blog/til/delete-merged-git-branches
+	sync = !git switch main && git pull --prune && git branch --format '%(refname:short) %(upstream:track)' | awk '$2 == \"[gone]\" { print $1 }' | xargs -r git branch -D
+
 [core]
 	excludesfile = ~/.gitignore
 	ignorecase = false
