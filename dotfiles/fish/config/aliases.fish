@@ -59,3 +59,17 @@ alias postgresport='postgres -D /usr/local/var/postgres'
 
 # Heroku: See commit diff between staging and production
 alias hdiff='heroku pipelines:diff -a '
+
+# Konfidens
+alias kk='cd /Users/mortnod/Projects/konfidens/konfidens'
+alias kg='open https://github.com/Konfidens/konfidens'
+function kp
+    if test (count $argv) -eq 0
+        open "https://github.com/Konfidens/konfidens/pulls"
+    else
+        open "https://github.com/Konfidens/konfidens/pull/$argv[1]"
+    end
+end
+function ki
+    open "https://github.com/Konfidens/konfidens/issues/$argv[1]"
+end
