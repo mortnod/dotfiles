@@ -404,6 +404,11 @@ The following are instructions to tweak the look of the menu bar items. The end 
 
 - Remove default signature, and add new ones if you'd like
 
+
+# Raycast
+
+- **Extensions:** Search for `Script command` and add the scripts directory (`./dotfiles/other/Raycast/scripts`)
+
 # Misc.
 
 ### Startup items
