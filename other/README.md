@@ -107,6 +107,11 @@
 
 - **Zoom:** Check _Use gesture with modifier keys to zoom_. This is a really nifty feature that allows you to zoom in on anything anywhere.
 
+### Sound
+
+- **Sound effects:** Set alert sound to _Quack_
+  - From the macossounds folder, copy the sound file to `/Users/[username]/Library/Sounds/`
+
 # <img src="https://user-images.githubusercontent.com/3471625/63200578-16a98280-c082-11e9-8705-008720cd8ec0.png" width="24">&nbsp; Manually installed applications
 
 While most applications are installed using `brew cask`, some must be installed manually.
