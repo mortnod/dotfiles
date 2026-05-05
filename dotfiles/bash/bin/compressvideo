@@ -1,0 +1,21 @@
+compressvideo() {
+    # Make gif out of video
+    if [ "$1" = "" ] ; then
+        echo "Missing input video"
+        return;
+    fi
+    if [ -f "$1" ]; then
+        echo "$1 exists."
+    else
+        echo "$1 does not exists."
+        return;
+    fi
+    filename=$(basename -- "$1")
+    extension="${filename##*.}"
+    new_filename="${filename%.*}.small.$extension"
+    type ffmpeg >/dev/null 2>&1 || { echo >&2 "I require ffmpeg but it's not installed.  Install with 'brew install ffmpeg'" & return }
+    ffmpeg -i "$1" -vf "fps=$FRAMERATE,scale=$SCALE:-1:flags=lanczos,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse" -loop 0 $1.gif
+    ffmpeg -i "$1" -c:v libx264 -c:a copy -crf 20 "$new_filename"
+    #ffmpeg -i "$1" -vf "fps=$FRAMERATE,scale=$SCALE:-1:flags=lanczos,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse"  -vcodec libvpx $1.webm
+    #ffmpeg -i "$1" -r $FRAMERATE -vf scale="$SCALE":-1 $1.gif
+}
