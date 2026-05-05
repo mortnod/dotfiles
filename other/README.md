@@ -118,9 +118,14 @@ While most applications are installed using `brew cask`, some must be installed 
 
 - [Adobe Creative Cloud](https://creativecloud.adobe.com/en/apps/download/creative-cloud)
 - [Alfred 3](https://www.alfredapp.com/help/v3/)
+- [Fontface](https://typefaceapp.com/)
+- [Libation](https://getlibation.com/)
 - PixelSnap (Check email for download link)
 - TextSniper (Check email for download link)
 - Apps only available on the app store
+  - Amphetamine
+  - [Color Picker](https://sindresorhus.com/system-color-picker)
+  - [Command X](https://sindresorhus.com/command-x)
   - [Contrast](https://usecontrast.com/)
   - [Gestimer](http://maddin.io/gestimer/)
   - [Colors for Hue](https://apps.apple.com/us/app/colors-for-hue/id581915465?mt=12)
@@ -128,6 +133,7 @@ While most applications are installed using `brew cask`, some must be installed 
   - [ToothFairy](https://c-command.com/toothfairy/)
   - [inddPreview](https://apps.apple.com/us/app/inddpreview/id1153435308?mt=12)
   - [Magnet](https://magnet.crowdcafe.com/)
+  - [Menu Timer](https://apps.apple.com/no/app/menutimer-menu-bar-tiny-timer/id6473223526?mt=12)
   - [GIF Brewery](https://gfycat.com/gifbrewery)
   - [Microsoft OneNote](https://apps.apple.com/us/app/microsoft-onenote/id410395246)
   - [Icon Slate](https://www.kodlian.com/apps/icon-slate)

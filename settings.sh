@@ -6,10 +6,10 @@ GIT_EMAIL="morten@noddeland.no"
 # The applications below are regular apps such as Chrome and Dropbox.
 # Please make sure that you remove all the programs you don't want to install on your computer
 # P.S. The installer script won't install the applications unless you tell it to. It's your call  :)
-BREW_CASKS="1password anydesk arq balsamiq-wireframes bartender bettertouchtool brooklyn color-oracle daisydisk discord dropbox electrum epic-games evernote figma firefox flux franz google-chrome handshaker iconjar iina imageoptim istat-menus iterm2 ivpn jaxx-liberty jetbrains-toolbox kap keycastr macmediakeyforwarder mailspring microsoft-edge microsoft-office mimestream notion numi openemu opera plex-media-player postman pycharm qlimagesize qlmobi quicklook-json raycast rowanj-gitx selfcontrol sketch signal slack spotify steam sublime-text superduper syntax-highlight teamviewer textsniper the-unarchiver transmission vivaldi visual-studio-code vlc webstorm"
+BREW_CASKS="1password anydesk arq balance-lock bartender bettertouchtool blip bluesnooze color-oracle crossover daisydisk discord dropbox epic-games evernote figma firefox flux franz google-chrome iconjar iina imageoptim istat-menus iterm2 keycastr mailspring microsoft-edge microsoft-office notion openemu qlimagesize qlmobi quicklook-json raycast reflex-app rowanj-gitx selfcontrol sketch signal slack spotify steam sublime-text superduper syntax-highlight teamviewer textsniper the-unarchiver transmission visual-studio-code vlc"
 
 # NODE
-NPM_PACKAGES="n ncu yarn"
+NPM_PACKAGES="n ncu pnpm yarn"
 
 # HYPER (installed with hpm)
 HPM_PACKAGES="hyper-snazzy hyperlinks hyperterm-1password"
